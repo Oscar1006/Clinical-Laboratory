@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="570.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="555.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
    <children>
       <HBox alignment="CENTER" prefHeight="167.0" prefWidth="500.0">
@@ -61,11 +60,19 @@
                   </Button>
                   <Button mnemonicParsing="false" onAction="#addNewPatient" prefHeight="33.0" prefWidth="180.0" style="-fx-background-color: #88D4F2;" text="Nuevo paciente">
                      <VBox.margin>
-                        <Insets top="40.0" />
+                        <Insets bottom="20.0" top="40.0" />
                      </VBox.margin>
                      <font>
                         <Font size="14.0" />
                      </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#removePatient" prefHeight="33.0" prefWidth="180.0" style="-fx-background-color: #88D4F2;" text="Egresar paciente">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
                   </Button>
                </children>
             </VBox>
