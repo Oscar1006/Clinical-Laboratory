@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -8,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="333.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPatientController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -18,16 +18,87 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField>
+            <TextField fx:id="txtName" prefHeight="30.0" prefWidth="200.0">
                <font>
                   <Font size="14.0" />
                </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Cedula:   ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtId" prefHeight="30.0" prefWidth="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="127.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Edad: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtAge" prefHeight="30.0" prefWidth="50.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Dirección: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtAddress" prefHeight="30.0" prefWidth="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="93.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Email:       ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEmail" prefHeight="30.0" prefWidth="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
             </TextField>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="Tipo de atención: ">
+            <Label text="Esta en embarazo: ">
                <font>
                   <Font size="14.0" />
                </font>
@@ -35,16 +106,75 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Label>
-            <RadioButton mnemonicParsing="false" text="Prioritaria">
+            <RadioButton fx:id="rbPregnant" mnemonicParsing="false" text="Si">
                <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets right="10.0" />
                </HBox.margin>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="General">
+            <RadioButton fx:id="rbPregnantNot" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="439.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Esta discapacitado:">
+               <font>
+                  <Font size="14.0" />
+               </font>
                <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton fx:id="rbDisabled" mnemonicParsing="false" text="Si">
+               <HBox.margin>
+                  <Insets right="10.0" />
                </HBox.margin>
             </RadioButton>
+            <RadioButton fx:id="rbDisabledNo" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="448.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Es oxigenodependiente:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton fx:id="rbOxigen" mnemonicParsing="false" text="Si">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rbOxigenNot" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="287.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Tiene efermedad grave:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+            <RadioButton fx:id="rbSeveral" mnemonicParsing="false" text="Si">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rbSeveralNot" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="88.0">
+         <children>
+            <Button minHeight="33.0" minWidth="155.0" mnemonicParsing="false" onAction="#addPatient" style="-fx-background-color: #88D4F2;" text="Añadir" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
    </children>
