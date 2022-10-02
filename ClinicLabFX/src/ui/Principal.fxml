@@ -12,11 +12,35 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="570.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="570.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="666.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrincipalController">
    <children>
       <HBox alignment="CENTER" prefHeight="167.0" prefWidth="500.0">
          <children>
-            <Label text="Laboratorio Clínico">
+            <VBox prefHeight="194.0" prefWidth="107.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="67.0" fitWidth="63.0" onMouseClicked="#undo" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/undo.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="50.0" onMouseClicked="#redo" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/redo.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="230.0" text="Laboratorio Clínico">
                <font>
                   <Font size="27.0" />
                </font>
@@ -24,7 +48,7 @@
                   <Insets left="20.0" right="20.0" />
                </HBox.margin>
             </Label>
-            <ImageView fitHeight="190.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="194.0" fitWidth="209.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/lab-logo.png" />
                </image>
@@ -34,11 +58,11 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="347.0" prefWidth="500.0">
+      <HBox alignment="CENTER" prefHeight="387.0" prefWidth="666.0">
          <children>
-            <TableView fx:id="tvPatient" prefHeight="347.0" prefWidth="217.0">
+            <TableView fx:id="tvPatient" prefHeight="359.0" prefWidth="246.0">
               <columns>
-                <TableColumn fx:id="tcPatient" minWidth="150.0" prefWidth="200.0" text="Pacientes en espera" />
+                <TableColumn fx:id="tcPatient" minWidth="150.0" prefWidth="244.66665399074554" text="Pacientes en espera" />
               </columns>
                <HBox.margin>
                   <Insets left="20.0" right="20.0" />
@@ -53,7 +77,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></TextField>
-                  <Button mnemonicParsing="false" onAction="#searchPatient" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #88D4F2;" text="Buscar paciente" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#searchPatient" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #63CAF2;" text="Buscar paciente" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="40.0" top="5.0" />
                      </VBox.margin>
@@ -61,7 +85,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#addNewPatient" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #88D4F2;" text="Nuevo paciente" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#addNewPatient" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #63CAF2;" text="Nuevo paciente" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="20.0" top="40.0" />
                      </VBox.margin>
@@ -69,7 +93,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#removePatient" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #88D4F2;" text="Egresar paciente" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#removePatient" prefHeight="33.0" prefWidth="200.0" style="-fx-background-color: #63CAF2;" text="Egresar paciente" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

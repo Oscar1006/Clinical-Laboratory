@@ -111,7 +111,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rbPregnantNot" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+            <RadioButton fx:id="rbPregnantNo" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="439.0" prefHeight="100.0" prefWidth="200.0">
@@ -147,7 +147,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rbOxigenNot" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+            <RadioButton fx:id="rbOxigenNo" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="287.0" prefHeight="100.0" prefWidth="200.0">
@@ -165,12 +165,12 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rbSeveralNot" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
+            <RadioButton fx:id="rbSeveralNo" layoutX="263.0" layoutY="29.0" mnemonicParsing="false" text="No" />
          </children>
       </HBox>
       <HBox alignment="CENTER" minHeight="88.0">
          <children>
-            <Button minHeight="33.0" minWidth="155.0" mnemonicParsing="false" onAction="#addPatient" style="-fx-background-color: #88D4F2;" text="Añadir" textFill="WHITE">
+            <Button minHeight="33.0" minWidth="155.0" mnemonicParsing="false" onAction="#addPatient" style="-fx-background-color: #63CAF2;" text="Añadir" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

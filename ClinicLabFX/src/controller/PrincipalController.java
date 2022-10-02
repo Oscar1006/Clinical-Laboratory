@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class PrincipalController {
 	
@@ -31,6 +32,15 @@ public class PrincipalController {
     }
     @FXML
     void removePatient(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void undo(MouseEvent event) {
+
+    }
+    @FXML
+    void redo(MouseEvent event) {
 
     }
     
