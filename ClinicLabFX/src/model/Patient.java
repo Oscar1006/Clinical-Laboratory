@@ -1,6 +1,6 @@
 package model;
 
-public class Patient {
+public class Patient  implements Comparable<Patient>{
 	
 	private String name;
 	private String id;
@@ -33,13 +33,38 @@ public class Patient {
 		this.disabled = disabled;
 		this.oxigenDependent = oxigenDependent;
 		
-		waitingTime = 0;
+		waitingTime = 1;
 	}
 
 
 
 	public int calcPriority() {
-		return 1;
+		int prio = waitingTime;
+		
+		if (age < 5) {
+			prio += 10;
+		}else if (age > 60) {
+			prio += 10;
+		}
+		
+		if (disabled) {
+			prio += 10;
+		}
+		
+		if (oxigenDependent) {
+			prio += 10;
+		}
+		
+		if (pregnant) {
+			prio += 10;
+		}
+		
+		if (severalDesease) {
+			prio += 10;
+		}
+		
+		
+		return prio;
 	}
 
 
@@ -100,5 +125,13 @@ public class Patient {
 
 	public int getWaitingTime() {
 		return waitingTime;
+	}
+
+
+
+	@Override
+	public int compareTo(Patient o) {
+
+		return this.calcPriority() - o.calcPriority();
 	}
 }

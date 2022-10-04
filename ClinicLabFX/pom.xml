@@ -28,6 +28,8 @@
       	<version>8.8.3</version>
       	<configuration>
         <mainClass>application.Main</mainClass>
+    
+    
     </configuration>
       </plugin>
     </plugins>
