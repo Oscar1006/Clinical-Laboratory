@@ -1,4 +1,4 @@
-package model;
+package data_structures;
 public class Element <T> {
 
     private T info;
@@ -19,7 +19,7 @@ public class Element <T> {
         next = a;
     }
 
-    public Object getInfo(){
+    public T getInfo(){
         return info;
     }
 

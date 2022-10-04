@@ -1,6 +1,6 @@
-package model;
+package data_structures;
 
-public class Pile <T> {
+public class Pile <T> implements IPile<T> {
 
     //the reference to the first node is enough
     //to characterize a list
@@ -10,6 +10,7 @@ public class Pile <T> {
         first = null;
     }
 
+    @Override
     public void insert(T info) {
         
         Element<T> newAct = new Element<T>(info, null);
@@ -20,6 +21,7 @@ public class Pile <T> {
     }
 
     //extracts the first element
+    @Override
     public Element<T> poll() {
         Element<T> top = null;
 
@@ -34,6 +36,7 @@ public class Pile <T> {
         return top;
     }
 
+    @Override
     public boolean isEmpty() {
         if (first == null)
             return true;
