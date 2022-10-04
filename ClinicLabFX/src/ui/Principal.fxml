@@ -22,7 +22,7 @@
                      <children>
                         <ImageView fitHeight="67.0" fitWidth="63.0" onMouseClicked="#undo" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/undo.png" />
+                              <Image url="@../images/undo.png" />
                            </image>
                            <HBox.margin>
                               <Insets top="5.0" />
@@ -30,7 +30,7 @@
                         </ImageView>
                         <ImageView fitHeight="45.0" fitWidth="50.0" onMouseClicked="#redo" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/redo.png" />
+                              <Image url="@../images/redo.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
@@ -50,7 +50,7 @@
             </Label>
             <ImageView fitHeight="194.0" fitWidth="209.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/lab-logo.png" />
+                  <Image url="@../images/lab-logo.png" />
                </image>
                <HBox.margin>
                   <Insets left="20.0" right="20.0" />

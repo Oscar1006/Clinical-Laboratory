@@ -13,7 +13,7 @@ import javafx.scene.image.Image;
 
 public class Main extends Application {
 	
-	public static final String ICON_IMG = "file:../../images/medicine-logo.png";
+	public static final String ICON_IMG = "file:src\\images\\medicine-logo.png";
 	
 	private ClinicLab cl = new ClinicLab();
 	
