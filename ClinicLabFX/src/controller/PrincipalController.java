@@ -37,7 +37,7 @@ public class PrincipalController {
     
     @FXML
     void undo(MouseEvent event) {
-
+    	m.getCl().undoAction();
     }
     @FXML
     void redo(MouseEvent event) {

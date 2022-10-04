@@ -1,18 +1,18 @@
 package model;
 
-public class ActionsStack {
+public class Pile <T> {
 
     //the reference to the first node is enough
     //to characterize a list
-    private Action first;
+    private Element<T> first;
 
-    public ActionsStack() {
+    public Pile() {
         first = null;
     }
 
-    public void insert(String info) {
+    public void insert(T info) {
         
-        Action newAct = new Action(info, null);
+        Element<T> newAct = new Element<T>(info, null);
         
         newAct.setNext(first);
         
@@ -20,8 +20,8 @@ public class ActionsStack {
     }
 
     //extracts the first element
-    public Action poll() {
-        Action top = null;
+    public Element<T> poll() {
+        Element<T> top = null;
 
         //if first is null, you cannot call its methods
         if (!isEmpty()) {

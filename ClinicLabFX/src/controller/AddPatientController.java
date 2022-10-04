@@ -77,7 +77,7 @@ public class AddPatientController {
     void addPatient(ActionEvent event) {
     	String name = txtName.getText();
     	String id = txtId.getText();
-    	String age = txtAge.getText();
+    	int age = Integer.parseInt(txtAge.getText());
     	String address = txtAddress.getText();
     	String email = txtEmail.getText();
     	boolean pregnant = false;
@@ -98,6 +98,7 @@ public class AddPatientController {
     	if(tgSeveral.getSelectedToggle().equals(rbSeveral)) {
     		several = true;
     	}
+    	m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
     }
     
     public void setM(Main m) {

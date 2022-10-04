@@ -1,29 +1,24 @@
 package model;
+
 public class Action {
+	enum Type { ADD, DELETE}
 
-    private String info;
-    private Action next;
+	
+	private Type type;
+	private Patient patient;
+	
+	public Action(Type type, Patient patient) {
+		
+		this.type = type;
+		this.patient = patient;
+	}
 
-    public Action() {
-        info = null;
-        next = null;
-    }
+	public Type getType() {
+		return type;
+	}
 
-    public Action(String info, Action a) {
-        this.info = info;
-        this.next = a;
-    }
-
-
-    public void setNext(Action a){
-        next = a;
-    }
-
-    public Object getInfo(){
-        return info;
-    }
-
-    public Action getNext(){
-        return next;
-    }
+	public Patient getPatient() {
+		return patient;
+	}
+	
 }
