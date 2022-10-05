@@ -1,4 +1,5 @@
 package data_structures;
+
 public class Element <T> {
 
     private T info;
@@ -7,6 +8,11 @@ public class Element <T> {
     public Element() {
         info = null;
         next = null;
+    }
+    
+    public Element( T data ) {
+    	info = data;
+    	next = null;
     }
 
     public Element(T info, Element<T> a) {

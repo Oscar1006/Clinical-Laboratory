@@ -8,6 +8,6 @@ public interface IQueue<T> {
 	
 	public Element<T> dequeue();
 	
-	public void enqueue(Element<T> element);
+	public void enqueue(T data);
 
 }

@@ -34,20 +34,24 @@ public class Queue<T> implements IQueue<T> {
 	@Override
 	public Element<T> dequeue() {
 		Element<T> temporal = null;
-		if( !isEmpty() ) {
-			if( first.getNext() == null ) {
+		
+		if( isEmpty() == false ) {
+			if( first == last ) {
 				temporal = first;
 				first = null;
+				last = null;
 			} else {
 				temporal = first;
 				first = first.getNext();
 			}
 		}
+		
 		return temporal;
 	}
 
 	@Override
-	public void enqueue(Element<T> element) {
+	public void enqueue(T data) {
+		Element<T> element = new Element<>(data);
 		if( isEmpty() ) {
 			first = element;
 			last = first;
