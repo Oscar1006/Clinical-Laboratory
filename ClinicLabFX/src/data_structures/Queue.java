@@ -28,19 +28,38 @@ public class Queue<T> implements IQueue<T> {
 
 	@Override
 	public Element<T> front() {
-		// TODO Auto-generated method stub
-		return null;
+		return first;
 	}
 
 	@Override
 	public Element<T> dequeue() {
-		// TODO Auto-generated method stub
-		return null;
+		Element<T> temporal = null;
+		if( !isEmpty() ) {
+			if( first.getNext() == null ) {
+				temporal = first;
+				first = null;
+			} else {
+				temporal = first;
+				first = first.getNext();
+			}
+		}
+		return temporal;
 	}
 
 	@Override
 	public void enqueue(Element<T> element) {
-		
+		if( isEmpty() ) {
+			first = element;
+			last = first;
+		} else {
+			Element<T> temporal = first;
+			
+			while( temporal.getNext() != null )
+				temporal = temporal.getNext();
+			
+			temporal.setNext(element);
+			last = element;
+		}
 	}
 
 }
