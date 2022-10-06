@@ -39,32 +39,32 @@ public class Patient  implements Comparable<Patient>{
 
 
 	public int calcPriority() {
-		int prio = waitingTime;
+		
 		
 		if (age < 5) {
-			prio += 10;
+			waitingTime += 10;
 		}else if (age > 60) {
-			prio += 10;
+			waitingTime += 10;
 		}
 		
 		if (disabled) {
-			prio += 10;
+			waitingTime += 10;
 		}
 		
 		if (oxigenDependent) {
-			prio += 10;
+			waitingTime += 10;
 		}
 		
 		if (pregnant) {
-			prio += 10;
+			waitingTime += 10;
 		}
 		
 		if (severalDesease) {
-			prio += 10;
+			waitingTime += 10;
 		}
 		
 		
-		return prio;
+		return waitingTime;
 	}
 
 
@@ -125,6 +125,10 @@ public class Patient  implements Comparable<Patient>{
 
 	public int getWaitingTime() {
 		return waitingTime;
+	}
+	
+	public void setWaitingTime(int newW) {
+		waitingTime=newW;
 	}
 
 

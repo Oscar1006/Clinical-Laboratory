@@ -43,6 +43,7 @@ public class Queue<T> implements IQueue<T> {
 			} else {
 				temporal = first;
 				first = first.getNext();
+				
 			}
 		}
 		

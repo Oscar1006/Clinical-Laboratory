@@ -1,9 +1,7 @@
 package model;
 
 import java.util.HashMap;
-
-import data_structures.Element;
-import data_structures.Pile;
+import data_structures.*;
 
 public class ClinicLab {
 
