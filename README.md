@@ -2,7 +2,7 @@
 
 ## Integrantes del proyecto.
 **Grupo 1**  
-Oscar  
-Sebastian  
++ Oscar  
++ Sebastian  
 **Grupo 3**  
-David Jun Kim Cubides.  
++ David Jun Kim Cubides.  
