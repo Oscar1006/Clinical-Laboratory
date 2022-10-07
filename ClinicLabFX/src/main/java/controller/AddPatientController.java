@@ -1,5 +1,6 @@
 package controller;
 
+import exception.PileException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
@@ -98,7 +99,12 @@ public class AddPatientController {
     	if(tgSeveral.getSelectedToggle().equals(rbSeveral)) {
     		several = true;
     	}
-    	m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
+    	try {
+			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
+		} catch (PileException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public void setM(Main m) {
