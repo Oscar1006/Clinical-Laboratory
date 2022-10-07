@@ -1,8 +1,7 @@
-package application;
+package controller;
 	
 import java.io.IOException;
 
-import controller.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -13,7 +12,7 @@ import javafx.scene.image.Image;
 
 public class Main extends Application {
 	
-	public static final String ICON_IMG = "file:src\\images\\medicine-logo.png";
+	public static final String ICON_IMG = "file:../../../resources/images/medicine-logo.png";
 	
 	private ClinicLab cl = new ClinicLab();
 	
@@ -27,7 +26,7 @@ public class Main extends Application {
 
 		PrincipalController principal;
 		try {
-			loader = new FXMLLoader(getClass().getResource("../ui/Principal.fxml"));
+			loader = new FXMLLoader(getClass().getResource("Principal.fxml"));
 			
 			root = loader.load();
 			principal = loader.getController();
@@ -48,7 +47,7 @@ public class Main extends Application {
 	public void showAddPatient() {
 		AddPatientController controller = new AddPatientController();
 		try {
-			loader = new FXMLLoader(getClass().getResource("../ui/AddPatient.fxml"));
+			loader = new FXMLLoader(getClass().getResource("AddPatient.fxml"));
 			
 			root = loader.load();
 			controller = loader.getController();

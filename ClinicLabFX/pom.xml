@@ -27,7 +27,7 @@
       	<artifactId>javafx-maven-plugin</artifactId>
       	<version>8.8.3</version>
       	<configuration>
-        <mainClass>application.Main</mainClass>
+        <mainClass>controller.Main</mainClass>
     
     
     </configuration>
@@ -37,4 +37,13 @@
   <organization>
   	<name>EPS</name>
   </organization>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.13</version>
+  		<scope>test</scope>
+  	</dependency>
+  </dependencies>
 </project>
