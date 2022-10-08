@@ -1,5 +1,7 @@
 package data_structures;
 
+import exception.StructureException;
+
 public class Queue<T> implements IQueue<T> {
 	
 	private Element<T> first;
@@ -8,14 +10,6 @@ public class Queue<T> implements IQueue<T> {
 	public Queue() {
 		first = null;
 		last = null;
-	}
-	
-	public Element<T> getFirst() {
-		return first;
-	}
-	
-	public Element<T> getLast() {
-		return last;
 	}
 
 	@Override
@@ -27,12 +21,14 @@ public class Queue<T> implements IQueue<T> {
 	}
 
 	@Override
-	public Element<T> front() {
+	public Element<T> front() throws StructureException {
+		if(first == null)
+			throw new StructureException();
 		return first;
 	}
 
 	@Override
-	public Element<T> dequeue() {
+	public Element<T> dequeue() throws StructureException{
 		Element<T> temporal = null;
 		
 		if( isEmpty() == false ) {
@@ -46,12 +42,14 @@ public class Queue<T> implements IQueue<T> {
 				
 			}
 		}
+		else
+			throw new StructureException();
 		
 		return temporal;
 	}
 
 	@Override
-	public void enqueue(T data) {
+	public void enqueue(T data) throws StructureException {
 		Element<T> element = new Element<>(data);
 		if( isEmpty() ) {
 			first = element;
@@ -64,6 +62,11 @@ public class Queue<T> implements IQueue<T> {
 			
 			temporal.setNext(element);
 			last = element;
+		}
+		
+		if(first != element && last!= element) {
+			throw new StructureException();
+			
 		}
 	}
 

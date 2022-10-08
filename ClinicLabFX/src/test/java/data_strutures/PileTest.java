@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import data_structures.Element;
 import data_structures.Pile;
-import exception.PileException;
+import exception.StructureException;
 
 
 public class PileTest {
@@ -18,18 +18,18 @@ public class PileTest {
 		pile = new Pile<>();
 	}
 	
-	public void setUpStage2() throws PileException {
+	public void setUpStage2() throws StructureException {
 		pile = new Pile<>();
 		pile.push("Hello");
 	}
 	
-	public void setUpStage3() throws PileException {
+	public void setUpStage3() throws StructureException {
 		pile = new Pile<>();
 		pile.push("Hello");
 		pile.pop();
 		
 	}
-	public void setUpStage4() throws PileException {
+	public void setUpStage4() throws StructureException {
 		pile = new Pile<>();
 		pile.push("Hello");
 		pile.push("World");
@@ -51,7 +51,7 @@ public class PileTest {
 	public void testIsEmpty2() {
 		try {
 			setUpStage2();
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			fail("No added");
 		}
 		
@@ -62,7 +62,7 @@ public class PileTest {
 	public void testIsEmpty3() {
 		try {
 			setUpStage3();
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			fail("No added or not popped");
 		}
 		
@@ -76,7 +76,7 @@ public class PileTest {
 		try {
 			pile.pop();
 			fail("Should throw exception");
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			System.out.println("Nice: " + e.getMessage());
 		}
 		assertTrue(pile.isEmpty());
@@ -88,7 +88,7 @@ public class PileTest {
 		try {
 			setUpStage2();
 			expected = pile.pop();
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			System.out.println(e.getMessage());
 			fail("Should not throw exception");
 		}
@@ -102,13 +102,13 @@ public class PileTest {
 		try {
 			setUpStage4();
 			expected = pile.pop();
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			System.out.println(e.getMessage());
 			fail("Should not throw exception");
 		}
 		try {
 			assertSame("Hello", pile.pop().getInfo());
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			e.printStackTrace();
 		}
 		assertSame("World", expected.getInfo());
@@ -121,14 +121,14 @@ public class PileTest {
 	
 		try {
 			pile.push("Nice job");
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			System.out.println( e.getMessage());
 			fail("Should not throw exception");
 		}
 		assertTrue(!pile.isEmpty());
 		try {
 			assertEquals("Wrong", "Nice job", pile.top().getInfo());
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			fail("Should not throw exception");
 			e.printStackTrace();
 		}
@@ -198,7 +198,7 @@ public class PileTest {
 			pile.pop();
 			pile.top();
 			fail("Should throw exception");
-		} catch (PileException pe) {
+		} catch (StructureException pe) {
 			System.out.println("Nice: " + pe.getMessage());
 			
 		}

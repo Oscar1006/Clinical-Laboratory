@@ -1,6 +1,6 @@
 package controller;
 
-import exception.PileException;
+import exception.StructureException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -39,7 +39,7 @@ public class PrincipalController {
     void undo(MouseEvent event) {
     	try {
 			m.getCl().undoAction();
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

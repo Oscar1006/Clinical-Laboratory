@@ -1,6 +1,6 @@
 package data_structures;
 
-import exception.PileException;
+import exception.StructureException;
 
 public class Pile <T> implements IPile<T> {
 
@@ -21,7 +21,7 @@ public class Pile <T> implements IPile<T> {
     }
     
     @Override
-    public void push(T info) throws PileException{
+    public void push(T info) throws StructureException{
         
         Element<T> newAct = new Element<T>(info, null);
         
@@ -30,19 +30,19 @@ public class Pile <T> implements IPile<T> {
         first = newAct;
         
         if(!newAct.equals(first)) {
-        	throw new PileException();
+        	throw new StructureException();
         }
     }
 
     @Override
-    public Element<T> top() throws PileException {
+    public Element<T> top() throws StructureException {
     	Element<T> top = null;
 
         //if first is null, you cannot call its methods
         if (!isEmpty()) {
             top = first;
         }else {
-        	throw new PileException();
+        	throw new StructureException();
         }
 
         //if the list is empty, null should be returned, but this is
@@ -52,7 +52,7 @@ public class Pile <T> implements IPile<T> {
 
     //extracts the first element
     @Override
-    public Element<T> pop() throws PileException {
+    public Element<T> pop() throws StructureException {
     	Element<T> top = null;
     	
     	//if first is null, you cannot call its methods
@@ -60,7 +60,7 @@ public class Pile <T> implements IPile<T> {
     		top = first;
     		first = first.getNext();
     	}else {
-    		throw new PileException();
+    		throw new StructureException();
     	}
     	//if the list is empty, null should be returned, but this is
     	//the default value of "out"

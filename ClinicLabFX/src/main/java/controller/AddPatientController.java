@@ -1,6 +1,6 @@
 package controller;
 
-import exception.PileException;
+import exception.StructureException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
@@ -101,7 +101,7 @@ public class AddPatientController {
     	}
     	try {
 			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
-		} catch (PileException e) {
+		} catch (StructureException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

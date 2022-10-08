@@ -2,7 +2,7 @@ package model;
 
 import java.util.HashMap;
 import data_structures.*;
-import exception.PileException;
+import exception.StructureException;
 
 public class ClinicLab {
 
@@ -16,7 +16,7 @@ public class ClinicLab {
 	}
 	
 	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen) throws PileException {
+			boolean pregnant, boolean several, boolean disabled, boolean oxigen) throws StructureException {
 		
 		Patient p = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
 		patients.put(id, p);
@@ -26,11 +26,11 @@ public class ClinicLab {
 		addActionToUndo(act);
 	}
 	
-	public void addActionToUndo (Action a) throws PileException {
+	public void addActionToUndo (Action a) throws StructureException {
 		actionsToUndo.push(a);
 	}
 	
-	public void undoAction () throws PileException {
+	public void undoAction () throws StructureException {
 		Element<Action> element = actionsToUndo.pop();
 		Action toUndo = (Action)element.getInfo();
 		

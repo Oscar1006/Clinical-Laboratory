@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import model.Patient;
 
 
-public class PriorityQueue<T> {
+public class PriorityQueue implements IPriorityQueue {
 	
 	private ArrayList<Patient> list;
 	
@@ -13,10 +13,12 @@ public class PriorityQueue<T> {
 		list= new ArrayList<>();
 	}
 	
+	@Override
 	public Patient maximum(){
 		return list.get(0);
 	}
 	
+	@Override
 	public Patient extractMaximum(){
 		Patient exit=list.remove(0);
 		maxHeapify(0);
@@ -39,6 +41,7 @@ public class PriorityQueue<T> {
 		
 	}
 	
+	@Override
 	public boolean insert(Patient p) {
 		if(list.add(p)) {
 			changeIncElement(list.size()-1);
@@ -48,6 +51,7 @@ public class PriorityQueue<T> {
 			return false;
 	}
 	
+	@Override
 	public boolean increase_Key(int i, int key) {
 		if(key<0) {
 			return false;
