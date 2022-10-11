@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import data_structures.*;
 import exception.StructureException;
@@ -16,9 +17,9 @@ public class ClinicLab {
 	}
 	
 	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen) throws StructureException {
+			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException {
 		
-		Patient p = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
+		Patient p = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
 		patients.put(id, p);
 		
 		Action act = new Action(Action.Type.ADD, p);

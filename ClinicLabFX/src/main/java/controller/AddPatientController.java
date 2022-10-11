@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import exception.StructureException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,6 +84,8 @@ public class AddPatientController {
     	String address = txtAddress.getText();
     	String email = txtEmail.getText();
     	boolean pregnant = false;
+    	Calendar now = Calendar.getInstance();
+    	
     	if(tgPregnant.getSelectedToggle().equals(rbPregnant)) {
     		pregnant = true;
     	}
@@ -100,7 +104,7 @@ public class AddPatientController {
     		several = true;
     	}
     	try {
-			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
+			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen, now);
 		} catch (StructureException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
