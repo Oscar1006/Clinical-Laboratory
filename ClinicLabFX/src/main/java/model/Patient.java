@@ -3,7 +3,7 @@ package model;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Patient  implements Comparable<Patient>{
+public class Patient implements Comparable<Patient>{
 	
 	public static final double PRIORITY_MULTIPLIER = 1.5;
 	

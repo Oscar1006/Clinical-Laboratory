@@ -1,9 +1,7 @@
 package data_structures;
 
 import java.util.ArrayList;
-
 import model.Patient;
-
 
 public class PriorityQueue implements IPriorityQueue {
 	

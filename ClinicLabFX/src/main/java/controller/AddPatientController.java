@@ -103,12 +103,14 @@ public class AddPatientController {
     	if(tgSeveral.getSelectedToggle().equals(rbSeveral)) {
     		several = true;
     	}
+    	/*
     	try {
-			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen, now);
+			// m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen, now);
 		} catch (StructureException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
     }
     
     public void setM(Main m) {
