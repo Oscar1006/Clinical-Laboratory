@@ -12,6 +12,8 @@ public class ClinicLab {
 	
 	HashMap<String, Patient> patients = new HashMap<>();
 	
+	PriorityQueue waitList= new PriorityQueue();
+	
 	public ClinicLab() {
 		
 	}
@@ -21,6 +23,7 @@ public class ClinicLab {
 		
 		Patient p = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
 		patients.put(id, p);
+		waitList.insert(p);
 		
 		Action act = new Action(Action.Type.ADD, p);
 		

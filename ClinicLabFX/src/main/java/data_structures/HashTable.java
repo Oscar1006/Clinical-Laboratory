@@ -9,7 +9,7 @@ public class HashTable<K, V> implements IHashTable<K, V>{
     private HashNode<K, V>[] nodes;
 
     public HashTable() {
-        nodes = new HashNode[SIZE];
+        nodes =new HashNode[SIZE];
     }
 
     public HashNode<K, V>[] getNodes() {
@@ -61,7 +61,8 @@ public class HashTable<K, V> implements IHashTable<K, V>{
                 while( temporal != null && !found ) {
                     if (temporal.getKey().equals(key))
                         found = true;
-                    temporal = temporal.getNext();
+                    else
+                    	temporal = temporal.getNext();
                 }
             }
         }

@@ -40,7 +40,6 @@ public class PrincipalController {
     	try {
 			m.getCl().undoAction();
 		} catch (StructureException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
