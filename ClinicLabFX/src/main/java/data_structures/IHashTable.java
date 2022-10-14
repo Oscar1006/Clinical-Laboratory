@@ -6,6 +6,6 @@ public interface IHashTable<K, V> {
 
     public HashNode<K, V> search(K key);
 
-    public void delete(K key);
+    public boolean delete(K key);
 
 }

@@ -67,8 +67,8 @@ public class ClinicLab {
 			return null;
 	}
 	
-	public void deletePatient( String id ) {
-		patients.delete(id);
+	public boolean deletePatient( String id ) {
+		return patients.delete(id);
 	}
 	
 	public void addActionToUndo (Action a) throws StructureException {

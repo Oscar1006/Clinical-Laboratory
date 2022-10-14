@@ -70,30 +70,38 @@ public class HashTable<K, V> implements IHashTable<K, V>{
     }
 
     @Override
-    public void delete(K key) {
+    public boolean delete(K key) {
+    	boolean deleted = false;
         int hash = hashFunctionByDivisionMethod(key);
         if (nodes[hash] != null) {
             if (nodes[hash].getNext() == null && nodes[hash].getPrevious() == null) {
-                if (nodes[hash].getKey().equals(key))
+                if (nodes[hash].getKey().equals(key)) {
                     nodes[hash] = null;
+                    deleted = true;
+                }
             } else {
                 if(nodes[hash].getPrevious() == null && nodes[hash].getKey().equals(key)) {
                     nodes[hash] = nodes[hash].getNext();
                     nodes[hash].setPrevious(null);
+                    deleted = true;
                 } else {
                     HashNode<K, V> currentNode = nodes[hash];
                     while(currentNode.getNext() != null) {
                         if (currentNode.getKey().equals(key)) {
                             currentNode.getPrevious().setNext(currentNode.getNext());
                             currentNode.getNext().setPrevious(currentNode.getPrevious());
+                            deleted = true;
                         }
                         currentNode = currentNode.getNext();
                     }
-                    if ( currentNode.getKey().equals(key) )
+                    if ( currentNode.getKey().equals(key) ) {
                         currentNode.getPrevious().setNext(null);
+                        deleted = true;
+                    }
                 }
             }
         }
+        return deleted;
     }
 
 }
