@@ -35,7 +35,7 @@ public class HashTableTest {
 	}
 	
 	@Test
-	void testInsert2() {
+	public void testInsert2() {
 		stage2();
 		fail("Fallo xd");
 	}
