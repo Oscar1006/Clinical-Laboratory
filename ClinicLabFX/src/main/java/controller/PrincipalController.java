@@ -26,6 +26,13 @@ public class PrincipalController {
 
     @FXML
     private TableView<Patient> tvPatient;
+    
+    
+    @FXML
+    private TableColumn<Patient, String> tcPrio;
+
+    @FXML
+    private TableView<Patient> tvPrio;
 
     @FXML
     private TextField txtSearch;
@@ -34,10 +41,14 @@ public class PrincipalController {
 	@FXML
 	private void initialize() {
 
-		// Table view
+		// Table no priority
 		tvPatient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 		tcPatient.setCellValueFactory(new PropertyValueFactory<>("name"));
 		
+		// Table priority
+		tvPrio.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+		tcPrio.setCellValueFactory(new PropertyValueFactory<>("name"));
+				
 	}
 	
 
@@ -88,7 +99,8 @@ public class PrincipalController {
 		tvPatient.setItems(p);
 		m.getCl().setNormalPatients(temporal);
 		
-		
+		ObservableList<Patient> prio = FXCollections.observableArrayList(m.getCl().getWaitList().getList());
+		tvPrio.setItems(prio);
     }
     
     

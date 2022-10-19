@@ -80,4 +80,8 @@ public class PriorityQueue implements IPriorityQueue {
 		}
 	}
 	
+	public ArrayList<Patient> getList() {
+		return list;
+	}
+	
 }

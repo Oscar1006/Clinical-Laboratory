@@ -68,9 +68,9 @@
                   <Insets left="20.0" />
                </HBox.margin>
             </TableView>
-            <TableView fx:id="tvPatient1" layoutX="121.0" layoutY="10.0" minWidth="150.0" prefHeight="387.0" prefWidth="150.0">
+            <TableView fx:id="tvPrio" layoutX="121.0" layoutY="10.0" minWidth="150.0" prefHeight="387.0" prefWidth="150.0">
                <columns>
-                  <TableColumn fx:id="tcPatient1" minWidth="150.0" prefWidth="148.66662728786469" text="Pacientes prioritarios" />
+                  <TableColumn fx:id="tcPrio" minWidth="150.0" prefWidth="148.66662728786469" text="Pacientes prioritarios" />
                </columns>
             </TableView>
             <VBox alignment="CENTER" prefHeight="347.0" prefWidth="253.0">
