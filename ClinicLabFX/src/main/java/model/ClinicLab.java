@@ -1,10 +1,10 @@
 package model;
 
 import java.util.Calendar;
-// import java.util.HashMap;
 import data_structures.Pile;
 import data_structures.HashTable;
 import data_structures.PriorityQueue;
+import data_structures.Queue;
 import data_structures.Element;
 import data_structures.HashNode;
 import exception.StructureException;
@@ -18,11 +18,17 @@ public class ClinicLab {
 	
 	private PriorityQueue waitList;
 	
+	private Queue<Patient> normalPatients;
+	
 	public ClinicLab() {
 		actionsToUndo = new Pile<>();
 		
 		patients = new HashTable<>();
+		
+		//Priority patients
 		waitList = new PriorityQueue();
+		
+		normalPatients = new Queue<>();
 	}
 	
 	public HashTable<String, Patient> getPatients() {
@@ -33,27 +39,28 @@ public class ClinicLab {
 		return waitList;
 	}
 	
-	/*
-	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException {
-		
-		Patient p = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
-		patients.put(id, p);
-		waitList.insert(p);
-		
-		Action act = new Action(Action.Type.ADD, p);
-		
-		addActionToUndo(act);
+	public Queue<Patient> getNormalWaitList() {
+		return normalPatients;
 	}
-	*/
+	public void setNormalPatients(Queue<Patient> normalPatients) {
+		this.normalPatients = normalPatients;
+	}
+	
+	
 
 	//Jun was here
 	public void addPatient(String name, String id, int age, String address, String email, 
 			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException 
 	{
 		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
+		
 		patients.insert(id, patient);
-		waitList.insert(patient);
+		
+		if (pregnant | several | disabled | oxigen ) {
+			waitList.insert(patient);			
+		}else {
+			normalPatients.enqueue(patient);
+		}
 
 		Action act = new Action(Action.Type.ADD, patient);
 		addActionToUndo(act);
@@ -81,13 +88,13 @@ public class ClinicLab {
 		
 		switch (toUndo.getType()) {
 		case ADD:
-			// patients.remove(toUndo.getPatient().getId());
+			patients.delete(toUndo.getPatient().getId());
 			break;
+		case DELETE:
 
 		default:
 			break;
 		}
-		
 		
 	}
 

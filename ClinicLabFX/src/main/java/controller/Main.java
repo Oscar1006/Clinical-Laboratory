@@ -21,10 +21,11 @@ public class Main extends Application {
 	private Scene scene;
 	private FXMLLoader loader;
 	
+	private PrincipalController principal;
+	
 	@Override
 	public void start(Stage primaryStage) {
 
-		PrincipalController principal;
 		try {
 			loader = new FXMLLoader(getClass().getResource("Principal.fxml"));
 			
@@ -75,6 +76,9 @@ public class Main extends Application {
 	
 	public ClinicLab getCl() {
 		return cl;
+	}
+	public PrincipalController getPrincipal() {
+		return principal;
 	}
 	
 	

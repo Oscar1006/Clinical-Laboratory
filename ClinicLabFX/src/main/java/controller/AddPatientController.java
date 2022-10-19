@@ -109,6 +109,7 @@ public class AddPatientController {
 			
 			e.printStackTrace();
 		}
+    	m.getPrincipal().initializeData();
 		
     }
     
