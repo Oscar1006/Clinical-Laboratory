@@ -9,7 +9,7 @@ public class HashTable<K, V> implements IHashTable<K, V>{
     private HashNode<K, V>[] nodes;
 
     public HashTable() {
-        nodes =new HashNode[SIZE];
+        nodes = new HashNode[SIZE];
     }
 
     public HashNode<K, V>[] getNodes() {

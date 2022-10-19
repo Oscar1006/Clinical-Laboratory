@@ -18,7 +18,7 @@ public class HashTableTest {
 	}
 	
 	@Test
-	void testInsert1() {
+	public void testInsert1() {
 		stage1();
 		patients.insert("1006048521", null);
 		fail("Fallo xd");

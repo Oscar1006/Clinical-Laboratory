@@ -13,7 +13,6 @@ public class ClinicLab {
 	
 	private Pile<Action> actionsToUndo;
 	
-	// HashMap<String, Patient> patients = new HashMap<>();
 	
 	private HashTable<String, Patient> patients; 
 	
@@ -21,6 +20,7 @@ public class ClinicLab {
 	
 	public ClinicLab() {
 		actionsToUndo = new Pile<>();
+		
 		patients = new HashTable<>();
 		waitList = new PriorityQueue();
 	}
@@ -49,14 +49,14 @@ public class ClinicLab {
 
 	//Jun was here
 	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) 
+			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException 
 	{
 		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
 		patients.insert(id, patient);
 		waitList.insert(patient);
 
-		// Action act = new Action(Action.Type.ADD, patient);
-		// addActionToUndo(act);
+		Action act = new Action(Action.Type.ADD, patient);
+		addActionToUndo(act);
 	}
 	
 	public Patient searchPatient( String id ) {
