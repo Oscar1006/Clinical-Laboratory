@@ -57,13 +57,8 @@ public class ClinicLab {
 		return patients;
 	}
 	
-	public ArrayList<Patient> getWaitList() {
-		ArrayList<Patient> p= new ArrayList<>();
-		
-		for(int i=0;i<waitList.toArray().size();i++) {
-			p.add(waitList.toArray().get(i).getPatient());
-		}
-		return p;
+	public PriorityQueue<Patient> getWaitList() {
+		return waitList;
 	}
 	
 	public Queue<Patient> getNormalWaitList() {
@@ -71,6 +66,10 @@ public class ClinicLab {
 	}
 	public void setNormalPatients(Queue<Patient> normalPatients) {
 		this.normalPatients = normalPatients;
+	}
+	
+	public void setWaitList(PriorityQueue<Patient> waitList) {
+		this.waitList = waitList;
 	}
 	
 	
@@ -88,6 +87,7 @@ public class ClinicLab {
 		if (pregnant | several | disabled | oxigen ) {
 			waitList.insert(count, patient);
 			count++;
+			System.out.println(waitList.toArray().get(0).getEntery());
 		}else {
 			normalPatients.enqueue(patient);
 		}

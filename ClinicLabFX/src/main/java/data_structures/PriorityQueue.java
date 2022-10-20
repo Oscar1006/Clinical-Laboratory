@@ -20,6 +20,10 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	public PriorityNode<K> extractMaximum(){
 		if(list.get(0)==null)
 			return null;
+		else if(list.size() == 1){
+			return list.remove(0);
+		}
+		
 		else {
 			PriorityNode<K> max = list.get(0);
  			list.set(0, list.get(list.size()-1));
@@ -48,11 +52,15 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	public boolean insert(int i, K p) {
 		if(list.add(new PriorityNode<K>(i, p))) {
 			changeIncElement(list.size());
+			
+			
+			
 			return true;
 		}
 		else
 			return false;
 	}
+	
 	
 	@Override
 	public boolean increase_Key(int i, int key) {
