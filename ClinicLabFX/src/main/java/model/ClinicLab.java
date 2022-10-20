@@ -1,12 +1,7 @@
 package model;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
+
 import java.util.Calendar;
 import data_structures.Pile;
 import data_structures.PriorityNode;
@@ -78,7 +73,7 @@ public class ClinicLab {
 	public void addPatient(String name, String id, int age, String address, String email, 
 			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException, NullPointerException, IOException 
 	{
-		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
+		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
 		
 		//patients.insert(id, patient);
 		
@@ -128,26 +123,6 @@ public class ClinicLab {
 		
 	}
 	
-	public void saveDoc() throws IOException,NullPointerException {
-		File file= new File(".\\files\\storage.data");
-		FileOutputStream fos= new FileOutputStream(file);
-		ObjectOutputStream oos= new ObjectOutputStream(fos);
-		oos.writeObject(patients.getNodes());
-		
-		oos.close();
-		fos.close();
-		
-	}
-	public void chargeDoc()throws IOException, ClassNotFoundException {
-		File file= new File(".\\files\\storage.data");
-		FileInputStream fos= new FileInputStream(file);
-		ObjectInputStream oos= new ObjectInputStream(fos);
-		
-		patients=(HashTable<String, Patient>) oos.readObject();
-		
-		oos.close();
-		fos.close();
-	}
 	
 	public void extractFromPQ() throws StructureException {
 		PriorityNode<Patient> elim=waitList.extractMaximum();

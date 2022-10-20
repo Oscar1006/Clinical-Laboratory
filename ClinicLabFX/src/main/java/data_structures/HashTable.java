@@ -8,7 +8,8 @@ public class HashTable<K, V> implements IHashTable<K, V>{
 
     private HashNode<K, V>[] nodes;
 
-    public HashTable() {
+    @SuppressWarnings("unchecked")
+	public HashTable() {
         nodes = new HashNode[SIZE];
     }
 
