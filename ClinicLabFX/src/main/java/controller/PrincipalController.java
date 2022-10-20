@@ -99,7 +99,7 @@ public class PrincipalController {
 		tvPatient.setItems(p);
 		m.getCl().setNormalPatients(temporal);
 		
-		ObservableList<Patient> prio = FXCollections.observableArrayList(m.getCl().getWaitList().getList());
+		ObservableList<Patient> prio = FXCollections.observableArrayList(m.getCl().getWaitList());
 		tvPrio.setItems(prio);
     }
     

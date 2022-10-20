@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.util.Calendar;
 import exception.StructureException;
 import javafx.event.ActionEvent;
@@ -76,7 +77,7 @@ public class AddPatientController {
     }
 
     @FXML
-    void addPatient(ActionEvent event) {
+    void addPatient(ActionEvent event) throws NullPointerException, IOException {
     	String name = txtName.getText();
     	String id = txtId.getText();
     	int age = Integer.parseInt(txtAge.getText());

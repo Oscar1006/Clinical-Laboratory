@@ -1,14 +1,12 @@
 package data_structures;
 
-import model.Patient;
-
-public interface IPriorityQueue {
- 
-	public Patient maximum();
+public interface IPriorityQueue<K> {
+	 
+	public PriorityNode<K> maximum();
 	
-	public Patient extractMaximum();
+	public PriorityNode<K> extractMaximum();
 
-	public boolean insert(Patient p);
+	public boolean insert(int i,K p);
 
 	public boolean increase_Key(int i, int key);
 }

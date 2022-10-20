@@ -1,7 +1,15 @@
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 import data_structures.Pile;
+import data_structures.PriorityNode;
 import data_structures.HashTable;
 import data_structures.PriorityQueue;
 import data_structures.Queue;
@@ -16,27 +24,46 @@ public class ClinicLab {
 	
 	private HashTable<String, Patient> patients; 
 	
-	private PriorityQueue waitList;
+	private PriorityQueue<Patient> waitList;
 	
 	private Queue<Patient> normalPatients;
+	
+	private int count;
+	
+	private int lastTurn;
 	
 	public ClinicLab() {
 		actionsToUndo = new Pile<>();
 		
+		
 		patients = new HashTable<>();
+		/*
+		try {
+			chargeDoc();
+		} catch (ClassNotFoundException | IOException e) {
+			e.printStackTrace();
+		}*/
 		
 		//Priority patients
-		waitList = new PriorityQueue();
+		waitList = new PriorityQueue<>();
 		
 		normalPatients = new Queue<>();
+		
+		count=1;
+		lastTurn=0;
 	}
 	
 	public HashTable<String, Patient> getPatients() {
 		return patients;
 	}
 	
-	public PriorityQueue getWaitList() {
-		return waitList;
+	public ArrayList<Patient> getWaitList() {
+		ArrayList<Patient> p= new ArrayList<>();
+		
+		for(int i=0;i<waitList.toArray().size();i++) {
+			p.add(waitList.toArray().get(i).getPatient());
+		}
+		return p;
 	}
 	
 	public Queue<Patient> getNormalWaitList() {
@@ -50,14 +77,17 @@ public class ClinicLab {
 
 	//Jun was here
 	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException 
+			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException, NullPointerException, IOException 
 	{
 		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
 		
-		patients.insert(id, patient);
+		//patients.insert(id, patient);
+		
+		//saveDoc();
 		
 		if (pregnant | several | disabled | oxigen ) {
-			waitList.insert(patient);			
+			waitList.insert(count, patient);
+			count++;
 		}else {
 			normalPatients.enqueue(patient);
 		}
@@ -91,11 +121,38 @@ public class ClinicLab {
 			patients.delete(toUndo.getPatient().getId());
 			break;
 		case DELETE:
-
+			waitList.insert(lastTurn, toUndo.getPatient());
 		default:
 			break;
 		}
 		
+	}
+	
+	public void saveDoc() throws IOException,NullPointerException {
+		File file= new File(".\\files\\storage.data");
+		FileOutputStream fos= new FileOutputStream(file);
+		ObjectOutputStream oos= new ObjectOutputStream(fos);
+		oos.writeObject(patients.getNodes());
+		
+		oos.close();
+		fos.close();
+		
+	}
+	public void chargeDoc()throws IOException, ClassNotFoundException {
+		File file= new File(".\\files\\storage.data");
+		FileInputStream fos= new FileInputStream(file);
+		ObjectInputStream oos= new ObjectInputStream(fos);
+		
+		patients=(HashTable<String, Patient>) oos.readObject();
+		
+		oos.close();
+		fos.close();
+	}
+	
+	public void extractFromPQ() throws StructureException {
+		PriorityNode<Patient> elim=waitList.extractMaximum();
+		addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()));
+		lastTurn=elim.getEntery();
 	}
 
 }
