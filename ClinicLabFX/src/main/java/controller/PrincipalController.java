@@ -51,22 +51,22 @@ public class PrincipalController {
 	}
 
 	@FXML
-	void addNewPatient(ActionEvent event) {
+	public void addNewPatient(ActionEvent event) {
 		m.showAddPatient();
 	}
 
 	@FXML
-	void searchPatient(ActionEvent event) {
+	public void searchPatient(ActionEvent event) {
 
 	}
 
 	@FXML
-	void removePatient(ActionEvent event) {
+	public void removePatient(ActionEvent event) {
 
 	}
 
 	@FXML
-	void undo(MouseEvent event) {
+	public void undo(MouseEvent event) {
 		try {
 			m.getCl().undoAction();
 		} catch (StructureException e) {
@@ -75,7 +75,7 @@ public class PrincipalController {
 	}
 
 	@FXML
-	void redo(MouseEvent event) {
+	public void redo(MouseEvent event) {
 		initializeData();
 	}
 
@@ -103,7 +103,7 @@ public class PrincipalController {
 
 		PriorityQueue<Patient> temporalPrio = new PriorityQueue<>();
 
-		while (m.getCl().getWaitList().maximum() != null) {
+		while (m.getCl().getWaitList().toArray().size()>0) {
 			temporalPrio.insert(m.getCl().getWaitList().maximum().getEntery(), m.getCl().getWaitList().maximum().getPatient());
 			patientsPrioArrayList.add(m.getCl().getWaitList().extractMaximum().getPatient());
 		}

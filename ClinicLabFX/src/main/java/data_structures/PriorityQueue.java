@@ -29,7 +29,7 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
  			list.set(0, list.get(list.size()-1));
  			list.set(list.size()-1, max);
  			max=list.remove(list.size()-1);
-			maxHeapify(0);
+			maxHeapify(1);
 			return max;
 		}
 	}
@@ -42,7 +42,8 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 				list.set(parent, list.get(i-1));
 				list.set(i-1, temp);
 
-				i=parent;
+				i=parent+1;
+				parent=(i/2)-1;
 			}
 		}
 		
@@ -52,9 +53,6 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	public boolean insert(int i, K p) {
 		if(list.add(new PriorityNode<K>(i, p))) {
 			changeIncElement(list.size());
-			
-			
-			
 			return true;
 		}
 		else
@@ -76,25 +74,29 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	}
 	
 	private void maxHeapify(int i) {
-		int r= i*2+1;
-		int l= i*2;
-		int largest=i;
-		if(l<=list.size()-1 && ((Patient) list.get(i).getPatient()).compareTo((Patient) list.get(l).getPatient())<0) 
-			largest=l;
-		else if(((Patient) list.get(i).getPatient()).compareTo((Patient) list.get(l).getPatient())==0 && list.get(i).getEntery()-list.get(l).getEntery()>0)
-			largest=l;
+		int r= i*2;
+		int l= (i*2)-1;
+		int largest=i-1;
 		
-		if(r<=list.size()-1 && ((Patient) list.get(largest).getPatient()).compareTo((Patient) list.get(r).getPatient())<0)
-			largest=r;
-		else if(((Patient) list.get(i).getPatient()).compareTo((Patient) list.get(r).getPatient())==0 && list.get(i).getEntery()-list.get(r).getEntery()>0)
-			largest=l;
+			if(l<=list.size()-1 && ((Patient) list.get(largest).getPatient()).compareTo((Patient) list.get(l).getPatient())<0) {
+				largest=l;
+			}
+			else if(l<=list.size()-1 &&((Patient) list.get(largest).getPatient()).compareTo((Patient) list.get(l).getPatient())==0 && (list.get(largest).getEntery()-list.get(l).getEntery()>0))
+				largest=l;
+			
+			if(r<=list.size()-1 && ((Patient) list.get(largest).getPatient()).compareTo((Patient) list.get(r).getPatient())<0)
+				largest=r;
+			else if(r<=list.size()-1 && ((Patient) list.get(largest).getPatient()).compareTo((Patient) list.get(r).getPatient())==0 && list.get(largest).getEntery()-list.get(r).getEntery()>0)
+				largest=r;
+			
+			if(largest!=i-1) {
+				PriorityNode<K> temp=list.get(i-1);
+				list.set(i-1, list.get(largest));
+				list.set(largest, temp);
+				maxHeapify(largest+1);
+			}
 		
-		if(largest!=i) {
-			PriorityNode<K> temp=list.get(i);
-			list.set(i, list.get(largest));
-			list.set(largest, temp);
-			maxHeapify(largest);
-		}
+		
 	}
 	
 	public ArrayList<PriorityNode<K>> toArray() {

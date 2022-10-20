@@ -76,9 +76,9 @@ public class ClinicLab {
 
 	//Jun was here
 	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException, NullPointerException, IOException 
+			boolean pregnant, boolean several, boolean disabled, boolean oxigen) throws StructureException, NullPointerException, IOException 
 	{
-		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
+		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
 		
 		//patients.insert(id, patient);
 		
@@ -87,7 +87,6 @@ public class ClinicLab {
 		if (pregnant | several | disabled | oxigen ) {
 			waitList.insert(count, patient);
 			count++;
-			System.out.println(waitList.toArray().get(0).getEntery());
 		}else {
 			normalPatients.enqueue(patient);
 		}

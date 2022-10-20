@@ -25,7 +25,7 @@ public class Patient implements Comparable<Patient>{
 	
 	
 	public Patient(String name, String id, int age, String address, String email, boolean pregnant, 
-			boolean severalDesease, boolean disabled, boolean oxigenDependent, Calendar entryTime) {
+			boolean severalDesease, boolean disabled, boolean oxigenDependent) {
 		
 		this.name = name;
 		this.id = id;

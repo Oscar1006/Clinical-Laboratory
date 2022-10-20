@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.Calendar;
 import exception.StructureException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -77,14 +76,13 @@ public class AddPatientController {
     }
 
     @FXML
-    void addPatient(ActionEvent event) throws NullPointerException, IOException {
+    public void addPatient(ActionEvent event) throws NullPointerException, IOException {
     	String name = txtName.getText();
     	String id = txtId.getText();
     	int age = Integer.parseInt(txtAge.getText());
     	String address = txtAddress.getText();
     	String email = txtEmail.getText();
     	boolean pregnant = false;
-    	Calendar now = Calendar.getInstance();
     	
     	if(tgPregnant.getSelectedToggle().equals(rbPregnant)) {
     		pregnant = true;
@@ -105,7 +103,7 @@ public class AddPatientController {
     	}
     	
     	try {
-			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen, now);
+			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
 		} catch (StructureException e) {
 			
 			e.printStackTrace();
