@@ -84,7 +84,7 @@ public class PrincipalController {
 			e.printStackTrace();
 		}
 		
-		m.getPrincipal().initializeData();
+		initializeData();
 	}
 
 	@FXML
@@ -137,7 +137,7 @@ public class PrincipalController {
 				while(conti) {
 
 					try {
-						Thread.sleep(20000);
+						Thread.sleep(60000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

@@ -2,13 +2,12 @@ package data_structures;
 
 public class HashTable<K, V> implements IHashTable<K, V>{
 	
-    private final double A = (Math.sqrt(5) - 1) / 2;
-
     private final int SIZE = 31;
 
     private HashNode<K, V>[] nodes;
 
-    public HashTable() {
+    @SuppressWarnings("unchecked")
+	public HashTable() {
         nodes = new HashNode[SIZE];
     }
 
@@ -21,12 +20,6 @@ public class HashTable<K, V> implements IHashTable<K, V>{
         return values % SIZE;
     }
 
-    public int hashFunctionByMultiplicationMethod(K key) {
-        int values = convertStringToNumbers(key);
-        double expression = SIZE * ((values * A) % 1);
-        return (int)expression;
-    }
-
     public int convertStringToNumbers(K key) {
         int values = 0;
         String s = key.toString();
@@ -36,7 +29,8 @@ public class HashTable<K, V> implements IHashTable<K, V>{
     }
 
     @Override
-    public void insert(K key, V value){
+    public boolean insert(K key, V value){
+    	boolean inserted = false;
         HashNode<K, V> node = new HashNode<>(key, value);
         int hash = hashFunctionByDivisionMethod(key);
         if (nodes[hash] != null) {
@@ -45,6 +39,9 @@ public class HashTable<K, V> implements IHashTable<K, V>{
             current.setPrevious(node);
         }
         nodes[hash] = node;
+        if(nodes[hash].getValue().equals(value))
+        	inserted = true;
+        return inserted;
     }
 
     @Override
