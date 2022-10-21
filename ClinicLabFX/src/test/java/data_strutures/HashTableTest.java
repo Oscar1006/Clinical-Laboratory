@@ -4,7 +4,10 @@ import model.Patient;
 import data_structures.HashNode;
 import data_structures.HashTable;
 import static org.junit.Assert.*;
+<<<<<<< HEAD
 import java.util.Calendar;
+=======
+>>>>>>> 891e99e1a5de896426d6f34ef4e2b1f23cc3fe90
 
 import org.junit.Test;
 
@@ -20,6 +23,7 @@ public class HashTableTest {
 	
 	private void stage2() {
 		patients = new HashTable<>();
+<<<<<<< HEAD
 		patients.insert("9334234323", new Patient("Jun", "9334234323", 21, "Candelaria", "david_jhun@outlook.es", false, false, false, false, Calendar.getInstance())); 
 		patients.insert("1234567890", new Patient("Pepe", "123456789", 30, "Cali", "pepe@gmail.com", false, true, false, true, Calendar.getInstance()));
 		patients.insert("1122334455", new Patient("Cristian", "1122334455", 18, "Pasto", "cristian@outlook.com", false, false, false, true, Calendar.getInstance()));
@@ -55,6 +59,19 @@ public class HashTableTest {
 		randomNames.insert("Adam", "Adam Smasher");
 		randomNames.insert("cortana", "Cortana");
 		randomNames.insert("117", "John");
+=======
+		patients.insert("1006048521", new Patient("Jun", "1006048521", 21, "Candelaria", "david_jhun@outlook.es", false, false, false, false)); 
+<<<<<<< HEAD
+		patients.insert("1234567890", new Patient("Pepe", "123456789", 30, "Cali", "pepe@gmail.com", false, true, false, true));
+=======
+		patients.insert("1234567890", new Patient("Pepe", "123456789", 30, "Cali", "pepe@gmail.com", false, true, false, true ));
+>>>>>>> branch 'master' of https://github.com/Oscar1006/Clinical-Laboratory.git
+		patients.insert("1122334455", new Patient("Cristian", "1122334455", 18, "Pasto", "cristian@outlook.com", false, false, false, true));
+		patients.insert("5566778899", new Patient("Jose", "5566778899", 40, "Bogota", "jose@gmail.com", false, false, false, false));
+		patients.insert("1011121314", new Patient("Luigi", "1011121314", 25, "Santander", "luigi@hotmail.com", false, false, false, true));
+		patients.insert("1617181920", new Patient("Mario", "1617181920", 50, "Italia", "mario@gmail.com", false, false, false, false));
+		patients.insert("2021222324", new Patient("Julio", "2021222324", 25, "Cesar", "julio@hotmail.com", false, true, true, true));
+>>>>>>> 891e99e1a5de896426d6f34ef4e2b1f23cc3fe90
 	}
 	
 	@Test

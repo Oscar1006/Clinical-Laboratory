@@ -6,7 +6,12 @@ public class HashTable<K, V> implements IHashTable<K, V>{
 
     private HashNode<K, V>[] nodes;
 
+<<<<<<< HEAD
     public HashTable() {
+=======
+    @SuppressWarnings("unchecked")
+	public HashTable() {
+>>>>>>> 891e99e1a5de896426d6f34ef4e2b1f23cc3fe90
         nodes = new HashNode[SIZE];
     }
 

@@ -1,9 +1,13 @@
 package model;
 
+import java.io.IOException;
+
 import java.util.Calendar;
 import data_structures.Pile;
+import data_structures.PriorityNode;
 import data_structures.HashTable;
 import data_structures.PriorityQueue;
+import data_structures.Queue;
 import data_structures.Element;
 import data_structures.HashNode;
 import exception.StructureException;
@@ -12,50 +16,78 @@ public class ClinicLab {
 	
 	private Pile<Action> actionsToUndo;
 	
-	// HashMap<String, Patient> patients = new HashMap<>();
 	
 	private HashTable<String, Patient> patients; 
 	
-	private PriorityQueue waitList;
+	private PriorityQueue<Patient> waitList;
+	
+	private Queue<Patient> normalPatients;
+	
+	private int count;
+	
+	private int lastTurn;
 	
 	public ClinicLab() {
 		actionsToUndo = new Pile<>();
+		
+		
 		patients = new HashTable<>();
-		waitList = new PriorityQueue();
+		/*
+		try {
+			chargeDoc();
+		} catch (ClassNotFoundException | IOException e) {
+			e.printStackTrace();
+		}*/
+		
+		//Priority patients
+		waitList = new PriorityQueue<>();
+		
+		normalPatients = new Queue<>();
+		
+		count=1;
+		lastTurn=0;
 	}
 	
 	public HashTable<String, Patient> getPatients() {
 		return patients;
 	}
 	
-	public PriorityQueue getWaitList() {
+	public PriorityQueue<Patient> getWaitList() {
 		return waitList;
 	}
 	
-	/*
-	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) throws StructureException {
-		
-		Patient p = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
-		patients.put(id, p);
-		waitList.insert(p);
-		
-		Action act = new Action(Action.Type.ADD, p);
-		
-		addActionToUndo(act);
+	public Queue<Patient> getNormalWaitList() {
+		return normalPatients;
 	}
-	*/
+	public void setNormalPatients(Queue<Patient> normalPatients) {
+		this.normalPatients = normalPatients;
+	}
+	
+	public void setWaitList(PriorityQueue<Patient> waitList) {
+		this.waitList = waitList;
+	}
+	
+	
 
 	//Jun was here
 	public void addPatient(String name, String id, int age, String address, String email, 
-			boolean pregnant, boolean several, boolean disabled, boolean oxigen, Calendar entryTime) 
+			boolean pregnant, boolean several, boolean disabled, boolean oxigen) throws StructureException, NullPointerException, IOException 
 	{
-		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen, entryTime);
-		patients.insert(id, patient);
-		waitList.insert(patient);
+		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
+		
+		//patients.insert(id, patient);
+		
+		//saveDoc();
+		
+		if (pregnant | several | disabled | oxigen ) {
+			waitList.insert(count, patient);
+			count++;
+		}else {
+			normalPatients.enqueue(patient);
+		}
 
-		// Action act = new Action(Action.Type.ADD, patient);
-		// addActionToUndo(act);
+		Action act = new Action(Action.Type.ADD, patient);
+		addActionToUndo(act);
 	}
 	
 	public Patient searchPatient( String id ) {
@@ -80,14 +112,21 @@ public class ClinicLab {
 		
 		switch (toUndo.getType()) {
 		case ADD:
-			// patients.remove(toUndo.getPatient().getId());
+			patients.delete(toUndo.getPatient().getId());
 			break;
-
+		case DELETE:
+			waitList.insert(lastTurn, toUndo.getPatient());
 		default:
 			break;
 		}
 		
-		
+	}
+	
+	
+	public void extractFromPQ() throws StructureException {
+		PriorityNode<Patient> elim=waitList.extractMaximum();
+		addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()));
+		lastTurn=elim.getEntery();
 	}
 
 }
