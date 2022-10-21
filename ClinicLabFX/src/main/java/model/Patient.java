@@ -41,6 +41,41 @@ public class Patient implements Comparable<Patient>{
 
 
 
+	public Patient(String[] atributes) {
+		this.name = atributes[0];
+		this.id = atributes[1];
+		this.age = Integer.parseInt(atributes[2]);
+		this.address = atributes[3];
+		this.email = atributes[4];
+		
+		if (Integer.parseInt(atributes[5]) < 4) {
+			this.pregnant = true;
+		}else {
+			this.pregnant = false;
+		}
+		
+		if (Integer.parseInt(atributes[6]) < 4) {
+			this.severalDesease = true;
+		}else {
+			this.severalDesease = false;
+		}
+		
+		if (Integer.parseInt(atributes[7]) < 4) {
+			this.disabled = true;
+		}else {
+			this.disabled = false;
+		}
+		
+		if (Integer.parseInt(atributes[8]) < 4) {
+			this.oxigenDependent = true;
+		}else {
+			this.oxigenDependent = false;
+		}
+
+	}
+
+
+
 	public void calcPriority() {
 		
 		if (age < 5) {
@@ -136,5 +171,33 @@ public class Patient implements Comparable<Patient>{
 	public int compareTo(Patient o) {
 
 		return this.waitingTime - o.waitingTime;
+	}
+
+
+
+	@Override
+	public String toString() {
+		int pregnantValue = 1;
+		if (pregnant) {
+			pregnantValue = 7;
+		}
+		
+		int severalDeseaseValue = 1;
+		if (severalDesease) {
+			severalDeseaseValue = 7;
+		}
+		
+		int disabledValue = 1;
+		if (disabled) {
+			disabledValue = 7;
+		}
+		
+		int oxigenDependentValue = 1;
+		if (oxigenDependent) {
+			oxigenDependentValue = 7;
+		}
+		return name + "," + id + "," + age + "," + address + "," + email
+					+ "," + pregnantValue + "," + severalDeseaseValue 
+					+ "," + disabledValue + "," + oxigenDependentValue ;
 	}
 }

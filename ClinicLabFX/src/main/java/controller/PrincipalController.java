@@ -76,7 +76,7 @@ public class PrincipalController {
 
 	@FXML
 	public void redo(MouseEvent event) {
-		initializeData();
+		m.getCl().writeDataBase();
 	}
 
 	@FXML

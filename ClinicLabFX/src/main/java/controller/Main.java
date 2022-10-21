@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
 
 public class Main extends Application {
 	
-	public static final String ICON_IMG = "file:../../../resources/images/medicine-logo.png";
+	public static final String ICON_IMG = "medicine-logo.png";
 	
 	private ClinicLab cl = new ClinicLab();
 	
@@ -37,13 +37,22 @@ public class Main extends Application {
 			
 			newStage = new Stage();
 			newStage.setTitle("Laboratorio");
-			newStage.getIcons().add(new Image(ICON_IMG));
+			newStage.getIcons().add(new Image(Main.class.getResourceAsStream(ICON_IMG)));
+
 			newStage.setScene(scene);
 			newStage.show();
+			
+			cl.readDataBase();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	@Override
+    public void stop() {
+        // executed when the application shuts down
+		cl.writeDataBase();
+    }
 	
 	public void showAddPatient() {
 		AddPatientController controller = new AddPatientController();
@@ -61,7 +70,7 @@ public class Main extends Application {
 			
 			newStage = new Stage();
 			newStage.setTitle("Añadir paciente");
-			newStage.getIcons().add(new Image(ICON_IMG));
+			newStage.getIcons().add(new Image(Main.class.getResourceAsStream(ICON_IMG)));
 			newStage.setScene(scene);
 			newStage.show();
 			
