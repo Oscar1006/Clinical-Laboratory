@@ -145,16 +145,11 @@ public class PrincipalController {
 						@Override
 						public void run() {
 							try {
-
-
 								if(m.getCl().getWaitList().toArray().size()!=0 && (count%4!=0 | count==0)) {
 									m.getCl().extractFromPQ();
-
-
 								}
 								else if((!m.getCl().getNormalWaitList().isEmpty() && count%4==0)|(!m.getCl().getNormalWaitList().isEmpty() && m.getCl().getWaitList().toArray().size()==0)) {
-									threadQueue();
-
+									m.getCl().dequeueFromQ();
 								}
 								initializeData();
 								count++;

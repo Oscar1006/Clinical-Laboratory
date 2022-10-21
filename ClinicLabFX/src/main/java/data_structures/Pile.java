@@ -24,7 +24,9 @@ public class Pile <T> implements IPile<T> {
     public void push(T info) throws StructureException{
         
         Element<T> newAct = new Element<T>(info, null);
-          
+        
+        newAct.setNext(first);
+        
         first = newAct;
         
         if(!newAct.equals(first)) {
