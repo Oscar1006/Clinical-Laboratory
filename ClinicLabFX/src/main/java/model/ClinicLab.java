@@ -80,7 +80,7 @@ public class ClinicLab {
 	{
 		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
 		
-		//patients.insert(id, patient);
+		patients.insert(id, patient);
 		
 		//saveDoc();
 		
@@ -112,19 +112,26 @@ public class ClinicLab {
 	}
 	
 	public void undoAction () throws StructureException {
-		Element<Action> element = actionsToUndo.pop();
+		Element<Action> element = actionsToUndo.top();
 		Action toUndo = (Action)element.getInfo();
 		
 		switch (toUndo.getType()) {
 		case ADD:
 			patients.delete(toUndo.getPatient().getId());
+			if(toUndo.getPatient().isDisabled()|toUndo.getPatient().isOxigenDependent()| toUndo.getPatient().isPregnant()| toUndo.getPatient().isSeveralDesease() |toUndo.getPatient().getAge()<5 | toUndo.getPatient().getAge()>60)
+				undoToPQ("add");
+			else
+				undoToQ("add");
 			break;
 		case DELETE:
-			waitList.insert(lastTurn, toUndo.getPatient());
+			if(toUndo.getPatient().isDisabled()|toUndo.getPatient().isOxigenDependent()| toUndo.getPatient().isPregnant()| toUndo.getPatient().isSeveralDesease() |toUndo.getPatient().getAge()<5 | toUndo.getPatient().getAge()>60)
+				undoToPQ("delete");
+			else
+				undoToQ("delete");
 		default:
 			break;
 		}
-		
+	
 	}
 	
 	public void saveDoc() throws IOException,NullPointerException {
@@ -142,16 +149,60 @@ public class ClinicLab {
 		FileInputStream fos= new FileInputStream(file);
 		ObjectInputStream oos= new ObjectInputStream(fos);
 		
-		patients=(HashTable<String, Patient>) oos.readObject();
+		patients=((HashTable<String, Patient>) oos.readObject());
 		
 		oos.close();
 		fos.close();
 	}
 	
 	public void extractFromPQ() throws StructureException {
-		PriorityNode<Patient> elim=waitList.extractMaximum();
-		addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()));
-		lastTurn=elim.getEntery();
+		if(waitList.toArray().size()!=0) {
+			PriorityNode<Patient> elim=waitList.extractMaximum();
+			addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()));
+			lastTurn=elim.getEntery();
+		}
+	}
+	
+	public void dequeueFromQ() throws StructureException {
+		Element<Patient> elim=normalPatients.dequeue();
+		addActionToUndo(new Action(Action.Type.DELETE, elim.getInfo()));
+	}
+	
+	public void undoToQ(String t) throws StructureException {
+		if(t.equalsIgnoreCase("add")) {
+			Queue<Patient> temp= new Queue<>();
+			while(!normalPatients.isEmpty()) {
+				if(normalPatients.front().getInfo()!=actionsToUndo.top().getInfo().getPatient())
+					temp.enqueue(normalPatients.dequeue().getInfo());
+				else
+					normalPatients.dequeue();
+			}
+			normalPatients=temp;
+			actionsToUndo.pop();
+		}
+		else {
+			normalPatients.enqueue(actionsToUndo.pop().getInfo().getPatient());
+		}
+	}
+	
+	public void undoToPQ(String t) throws StructureException {
+		if(t.equalsIgnoreCase("add")) {
+			PriorityQueue<Patient> temp= new PriorityQueue<>();
+			while(waitList.toArray().size()!=0) {
+				if(waitList.toArray().get(0).getPatient()!=actionsToUndo.top().getInfo().getPatient()) {
+					PriorityNode <Patient> temp2=waitList.extractMaximum();
+					temp.insert(temp2.getEntery(), temp2.getPatient());
+				}
+				else
+					waitList.extractMaximum();	
+			}
+			
+			waitList=temp;
+			actionsToUndo.pop();
+		}
+		else {
+			waitList.insert(lastTurn, actionsToUndo.pop().getInfo().getPatient());
+		}
 	}
 
 }

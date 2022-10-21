@@ -22,6 +22,7 @@ public class Main extends Application {
 	private FXMLLoader loader;
 	
 	private PrincipalController principal;
+	private AddPatientController controller;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -46,7 +47,7 @@ public class Main extends Application {
 	}
 	
 	public void showAddPatient() {
-		AddPatientController controller = new AddPatientController();
+		controller = new AddPatientController();
 		try {
 			loader = new FXMLLoader(getClass().getResource("AddPatient.fxml"));
 			
@@ -80,6 +81,8 @@ public class Main extends Application {
 	public PrincipalController getPrincipal() {
 		return principal;
 	}
-	
+	public AddPatientController getAddController() {
+		return controller;
+	}
 	
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import data_structures.PriorityQueue;
 import data_structures.Queue;
 import exception.StructureException;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,6 +37,11 @@ public class PrincipalController {
 
 	@FXML
 	private TextField txtSearch;
+	
+	private boolean conti;
+	
+	private int count;
+	
 
 	@FXML
 	private void initialize() {
@@ -47,6 +53,11 @@ public class PrincipalController {
 		// Table priority
 		tvPrio.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 		tcPrio.setCellValueFactory(new PropertyValueFactory<>("name"));
+		
+		conti=false;
+		
+		count=0;
+		
 
 	}
 
@@ -72,6 +83,8 @@ public class PrincipalController {
 		} catch (StructureException e) {
 			e.printStackTrace();
 		}
+		
+		m.getPrincipal().initializeData();
 	}
 
 	@FXML
@@ -116,5 +129,62 @@ public class PrincipalController {
 	public void setM(Main m) {
 		this.m = m;
 	}
+	
+	public void startThread() {
+		Thread taskThread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while(conti) {
 
+					try {
+						Thread.sleep(20000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					Platform.runLater(new Runnable() {
+						@Override
+						public void run() {
+							try {
+
+
+								if(m.getCl().getWaitList().toArray().size()!=0 && (count%4!=0 | count==0)) {
+									m.getCl().extractFromPQ();
+
+
+								}
+								else if((!m.getCl().getNormalWaitList().isEmpty() && count%4==0)|(!m.getCl().getNormalWaitList().isEmpty() && m.getCl().getWaitList().toArray().size()==0)) {
+									threadQueue();
+
+								}
+								initializeData();
+								count++;
+
+								if(m.getCl().getWaitList().toArray().size()==0 && m.getCl().getNormalWaitList().isEmpty()) {
+									conti=false;
+								}
+
+							} catch (StructureException e) {
+								e.printStackTrace();
+							}
+						}
+					}); 
+				}
+			}
+		});
+		taskThread.start();
+	}
+	
+	public void threadQueue() {
+		try {
+			m.getCl().dequeueFromQ();
+		} catch (StructureException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean statusConti() {
+		boolean ok= conti;
+		conti=true;
+		return ok;
+	}
 }

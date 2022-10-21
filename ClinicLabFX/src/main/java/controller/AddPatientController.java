@@ -51,6 +51,8 @@ public class AddPatientController {
     @FXML
     private TextField txtName;
     
+    private boolean count;
+    
     @FXML
     public void initialize() {
     	tgDisabled = new ToggleGroup();
@@ -73,6 +75,7 @@ public class AddPatientController {
     	rbSeveralNo.setToggleGroup(tgSeveral);
     	rbSeveralNo.setSelected(true);
     	
+    	count=false;
     }
 
     @FXML
@@ -108,7 +111,15 @@ public class AddPatientController {
 			
 			e.printStackTrace();
 		}
+    	
     	m.getPrincipal().initializeData();
+    	
+    	count=m.getPrincipal().statusConti();
+    	
+    	if(!count) {
+    		m.getPrincipal().startThread();
+    		count=true;
+    	}
 		
     }
     
