@@ -118,7 +118,11 @@ public class PrincipalController {
 
 		while (m.getCl().getWaitList().toArray().size()>0) {
 			temporalPrio.insert(m.getCl().getWaitList().maximum().getEntery(), m.getCl().getWaitList().maximum().getPatient());
-			patientsPrioArrayList.add(m.getCl().getWaitList().extractMaximum().getPatient());
+			try {
+				patientsPrioArrayList.add(m.getCl().getWaitList().extractMaximum().getPatient());
+			} catch (StructureException e) {
+				e.getMessage();
+			}
 		}
 		ObservableList<Patient> pp = FXCollections.observableArrayList(patientsPrioArrayList);
 		tvPrio.setItems(pp);
@@ -153,7 +157,7 @@ public class PrincipalController {
 								}
 								initializeData();
 								count++;
-
+								
 								if(m.getCl().getWaitList().toArray().size()==0 && m.getCl().getNormalWaitList().isEmpty()) {
 									conti=false;
 								}

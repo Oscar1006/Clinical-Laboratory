@@ -3,7 +3,7 @@ package model;
 
 public class Patient implements Comparable<Patient>{
 	
-	public static final double PRIORITY_MULTIPLIER = 10;
+	public static final double PRIORITY_MULTIPLIER = 1.5;
 	
 	private String name;
 	private String id;
