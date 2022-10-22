@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import data_structures.PriorityQueue;
@@ -14,15 +15,21 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-
+import javafx.scene.layout.VBox;
 import model.Patient;
 
 public class PrincipalController {
 
 	Main m;
-	
+	Patient searched;
+	public Patient getSearched() {
+		return searched;
+	}
 	
 	@FXML
 	private TableColumn<Patient, String> tcPatient;
@@ -54,6 +61,13 @@ public class PrincipalController {
 	private boolean conti;
 
 	private int count;
+	
+	@FXML
+    private VBox box;
+    
+    @FXML
+    private ToggleButton tgModule;
+    
 
 	@FXML
 	private void initialize() {
@@ -80,6 +94,35 @@ public class PrincipalController {
 		conti = false;
 
 		count = 0;
+		
+		
+		// Creating a graphic (image)
+		Image imgGeneral= new Image(Main.GENERAL_IMG);
+		Image imgHematology = new Image(Main.HEMATOLOGY_IMG);
+		
+    	ImageView viewGeneral = new ImageView(imgGeneral);
+    	ImageView viewHematology = new ImageView(imgHematology);
+    	
+
+		viewGeneral.setFitHeight(70);
+		viewGeneral.setPreserveRatio(true);
+    	
+		viewHematology.setFitHeight(70);
+		viewHematology.setPreserveRatio(true);
+		//tgModule = new ToggleButton();
+		tgModule.setGraphic(viewGeneral);
+		
+		tgModule.setOnAction(actionEvent ->  {
+			   
+			ToggleButton tg =(ToggleButton)actionEvent.getSource();
+			if(tg.isSelected()) {
+				tgModule.setGraphic(viewHematology);
+			}else {
+				tgModule.setGraphic(viewGeneral);
+			}
+		});
+		
+		//box.getChildren().add(tgModule);
 
 	}
 
@@ -90,18 +133,40 @@ public class PrincipalController {
 
 	@FXML
 	public void searchPatient(ActionEvent event) {
+		String id = txtSearch.getText();
+		searched = m.getCl().searchPatient(id);
 
+		
+		try {
+			m.getCl().addPatientToList(searched, tgModule.isSelected());
+		} catch (StructureException e)  {
+			System.out.println("Not found");
+		}
+		
+		initializeData();
+		
 	}
 
 	@FXML
 	public void removePatient(ActionEvent event) {
-
+		
 	}
 
 	@FXML
 	public void undo(MouseEvent event) {
 		try {
-			m.getCl().undoAction(true);
+			m.getCl().undoAction();
+		} catch (StructureException e) {
+			e.printStackTrace();
+		}
+
+		initializeData();
+	}
+
+	@FXML
+	public void undo2(MouseEvent event) {
+		try {
+			m.getCl().undoAction();
 		} catch (StructureException e) {
 			e.printStackTrace();
 		}
@@ -109,21 +174,6 @@ public class PrincipalController {
 		initializeData();
 	}
 	
-	@FXML
-	public void undo2(MouseEvent event) {
-		try {
-			m.getCl().undoAction(false);
-		} catch (StructureException e) {
-			e.printStackTrace();
-		}
-
-		initializeData();
-	}
-
-	@FXML
-	public void redo(MouseEvent event) {
-		initializeData();
-	}
 
 	@FXML
 	public void initializeData() {
@@ -182,13 +232,12 @@ public class PrincipalController {
 			try {
 				patientsPrioArrayList.add(q.extractMaximum().getPatient());
 			} catch (StructureException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		Queues pqs = new Queues(patientsPrioArrayList, temporalPrio);
 		return pqs;
-	
-	
 	
 	}
 	
@@ -212,23 +261,17 @@ public class PrincipalController {
 						public void run() {
 							try {
 								if (m.getCl().getGeneralPrioWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
-									m.getCl().extractFromPQ(true);
-								} else if (!m.getCl().getGeneralWaitList().isEmpty()) {
-									m.getCl().dequeueFromQ(true);
+									m.getCl().extractFromPQ();
+								} else if ((!m.getCl().getGeneralWaitList().isEmpty() && count % 4 == 0)
+										| (!m.getCl().getGeneralWaitList().isEmpty()
+												&& m.getCl().getGeneralPrioWaitList().toArray().size() == 0)) {
+									m.getCl().dequeueFromQ();
 								}
-								
-								if (m.getCl().getHematologyPrioWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
-									m.getCl().extractFromPQ(false);
-								} else if (!m.getCl().getHematologyWaitList().isEmpty()) {
-									m.getCl().dequeueFromQ(false);
-								}
-								
 								initializeData();
 								count++;
 
 								if (m.getCl().getGeneralPrioWaitList().toArray().size() == 0
-										&& m.getCl().getGeneralWaitList().isEmpty() && m.getCl().getHematologyPrioWaitList().toArray().size() == 0
-												&& m.getCl().getHematologyWaitList().isEmpty()) {
+										&& m.getCl().getGeneralWaitList().isEmpty()) {
 									conti = false;
 								}
 
@@ -243,6 +286,13 @@ public class PrincipalController {
 		taskThread.start();
 	}
 
+	public void threadQueue() {
+		try {
+			m.getCl().dequeueFromQ();
+		} catch (StructureException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public boolean statusConti() {
 		boolean ok = conti;
