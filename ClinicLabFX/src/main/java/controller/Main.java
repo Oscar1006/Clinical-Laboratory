@@ -14,6 +14,10 @@ public class Main extends Application {
 	
 	public static final String ICON_IMG = "file:src/main/resources/controller/medicine-logo.png";
 	
+	public static final String HEMATOLOGY_IMG = "file:src/main/resources/images/hermatologia.png";
+	public static final String GENERAL_IMG = "file:src/main/resources/images/lab-logo.png";
+	
+	
 	private ClinicLab cl = new ClinicLab();
 	
 	private Parent root;

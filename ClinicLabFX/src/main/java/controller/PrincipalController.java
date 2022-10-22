@@ -22,12 +22,19 @@ import model.Patient;
 public class PrincipalController {
 
 	Main m;
-
+	
+	
 	@FXML
 	private TableColumn<Patient, String> tcPatient;
 
 	@FXML
 	private TableColumn<Patient, String> tcPrio;
+
+	@FXML
+	private TableColumn<Patient, String> tcPatientH;
+
+	@FXML
+	private TableColumn<Patient, String> tcPrioH;
 
 	@FXML
 	private TableView<Patient> tvPatient;
@@ -51,13 +58,24 @@ public class PrincipalController {
 	@FXML
 	private void initialize() {
 
+		tcPatient.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tcPrio.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+		tcPatientH.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tcPrioH.setCellValueFactory(new PropertyValueFactory<>("name"));
+
 		// Table no priority
 		tvPatient.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-		tcPatient.setCellValueFactory(new PropertyValueFactory<>("name"));
 
 		// Table priority
 		tvPrio.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-		tcPrio.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+		
+		// Table no priority hema
+		tvPatientH.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+		// Table priority hema
+		tvPrioH.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
 		conti = false;
 
@@ -98,38 +116,67 @@ public class PrincipalController {
 
 	@FXML
 	public void initializeData() {
-
+		//General tv
+		Queues gq = giveQueues(m.getCl().getGeneralWaitList());
+		ArrayList<Patient> generalPatientsArrayList = gq.getAl();
+		ObservableList<Patient> p = FXCollections.observableArrayList(generalPatientsArrayList);
+		tvPatient.setItems(p);
+		m.getCl().setGeneralPatients(gq.getQ());
+		
+		Queues gpq = givePrios(m.getCl().getGeneralPrioWaitList());
+		ArrayList<Patient> generalPatientsPrioArrayList = gpq.getAl();
+		ObservableList<Patient> pp = FXCollections.observableArrayList(generalPatientsPrioArrayList);
+		tvPrio.setItems(pp);
+		m.getCl().setGeneralPrioPatients(gpq.getPq());
+		
+		//Hematology tv
+		Queues hq = giveQueues(m.getCl().getHematologyWaitList());
+		ArrayList<Patient> hematologyPatientsArrayList = hq.getAl();
+		ObservableList<Patient> hp = FXCollections.observableArrayList(hematologyPatientsArrayList);
+		tvPatientH.setItems(hp);
+		m.getCl().setHematologyWaitList(hq.getQ());
+		
+		Queues hpq = givePrios(m.getCl().getHematologyPrioWaitList());
+		ArrayList<Patient> hematologyPatientsPrioArrayList = hpq.getAl();
+		ObservableList<Patient> hpp = FXCollections.observableArrayList(hematologyPatientsPrioArrayList);
+		tvPrioH.setItems(hpp);
+		m.getCl().setHematologyPrioWaitList(hpq.getPq());
+		
+	}
+	
+	public Queues giveQueues (Queue<Patient> q){
 		ArrayList<Patient> patientsArrayList = new ArrayList<>();
-
-		Queue<Patient> temporal = new Queue<>();
-
+		Queue<Patient> temporalQueue = new Queue<>();
 		try {
-			while (!m.getCl().getNormalWaitList().isEmpty()) {
-				temporal.enqueue(m.getCl().getNormalWaitList().front().getInfo());
-				patientsArrayList.add(m.getCl().getNormalWaitList().dequeue().getInfo());
+			while (!q.isEmpty()) {
+				temporalQueue.enqueue(q.front().getInfo());
+				patientsArrayList.add(q.dequeue().getInfo());
 			}
 		} catch (StructureException e) {
 			e.printStackTrace();
 		}
-		ObservableList<Patient> p = FXCollections.observableArrayList(patientsArrayList);
-		tvPatient.setItems(p);
-		m.getCl().setNormalPatients(temporal);
+		Queues qs = new Queues(patientsArrayList, temporalQueue);
+		return qs;
+		
+	}
 
+	
+	public Queues givePrios (PriorityQueue<Patient> q){
 		ArrayList<Patient> patientsPrioArrayList = new ArrayList<>();
 
 		PriorityQueue<Patient> temporalPrio = new PriorityQueue<>();
 
-		while (m.getCl().getWaitList().toArray().size() > 0) {
-			temporalPrio.insert(m.getCl().getWaitList().maximum().getEntery(),
-					m.getCl().getWaitList().maximum().getPatient());
-			patientsPrioArrayList.add(m.getCl().getWaitList().extractMaximum().getPatient());
+		while (q.toArray().size() > 0) {
+			temporalPrio.insert(q.maximum().getEntery(),q.maximum().getPatient());
+			patientsPrioArrayList.add(q.extractMaximum().getPatient());
 		}
-		ObservableList<Patient> pp = FXCollections.observableArrayList(patientsPrioArrayList);
-		tvPrio.setItems(pp);
-		m.getCl().setWaitList(temporalPrio);
-
+		Queues pqs = new Queues(patientsPrioArrayList, temporalPrio);
+		return pqs;
+	
+	
+	
 	}
-
+	
 	public void setM(Main m) {
 		this.m = m;
 	}
@@ -149,18 +196,18 @@ public class PrincipalController {
 						@Override
 						public void run() {
 							try {
-								if (m.getCl().getWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
+								if (m.getCl().getGeneralPrioWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
 									m.getCl().extractFromPQ();
-								} else if ((!m.getCl().getNormalWaitList().isEmpty() && count % 4 == 0)
-										| (!m.getCl().getNormalWaitList().isEmpty()
-												&& m.getCl().getWaitList().toArray().size() == 0)) {
+								} else if ((!m.getCl().getGeneralWaitList().isEmpty() && count % 4 == 0)
+										| (!m.getCl().getGeneralWaitList().isEmpty()
+												&& m.getCl().getGeneralPrioWaitList().toArray().size() == 0)) {
 									m.getCl().dequeueFromQ();
 								}
 								initializeData();
 								count++;
 
-								if (m.getCl().getWaitList().toArray().size() == 0
-										&& m.getCl().getNormalWaitList().isEmpty()) {
+								if (m.getCl().getGeneralPrioWaitList().toArray().size() == 0
+										&& m.getCl().getGeneralWaitList().isEmpty()) {
 									conti = false;
 								}
 

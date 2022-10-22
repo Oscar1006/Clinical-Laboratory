@@ -35,7 +35,7 @@
          <children>
             <VBox alignment="TOP_CENTER">
                <children>
-                  <Label text="Hermatología">
+                  <Label text="Hematología">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -49,12 +49,12 @@
                      <children>
                         <TableView fx:id="tvPatientH" minWidth="150.0">
                           <columns>
-                            <TableColumn fx:id="tcPatient" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="148.66662728786469" text="Pacientes normales" />
+                            <TableColumn fx:id="tcPatientH" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="148.66662728786469" text="Pacientes normales" />
                           </columns>
                         </TableView>
                         <TableView fx:id="tvPrioH" minWidth="150.0">
                            <columns>
-                              <TableColumn fx:id="tcPrio" minWidth="150.0" prefWidth="148.66662728786469" text="Pacientes prioritarios" />
+                              <TableColumn fx:id="tcPrioH" minWidth="150.0" prefWidth="148.66662728786469" text="Pacientes prioritarios" />
                            </columns>
                         </TableView>
                      </children>

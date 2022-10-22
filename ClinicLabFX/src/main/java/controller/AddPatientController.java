@@ -1,12 +1,17 @@
 package controller;
 
 import java.io.IOException;
+
 import exception.StructureException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class AddPatientController {
 	
@@ -51,6 +56,12 @@ public class AddPatientController {
     @FXML
     private TextField txtName;
     
+    @FXML
+    private VBox box;
+    
+    @FXML
+    private ToggleButton tgModule;
+    
     private boolean count;
     
     @FXML
@@ -76,6 +87,36 @@ public class AddPatientController {
     	rbSeveralNo.setSelected(true);
     	
     	count=false;
+    	
+    	
+		// Creating a graphic (image)
+		Image imgGeneral= new Image(Main.GENERAL_IMG);
+		Image imgHematology = new Image(Main.HEMATOLOGY_IMG);
+		
+    	ImageView viewGeneral = new ImageView(imgGeneral);
+    	ImageView viewHematology = new ImageView(imgHematology);
+    	
+
+		viewGeneral.setFitHeight(222);
+		viewGeneral.setPreserveRatio(true);
+    	
+		viewHematology.setFitHeight(222);
+		viewHematology.setPreserveRatio(true);
+		tgModule = new ToggleButton();
+		tgModule.setGraphic(viewGeneral);
+		
+		tgModule.setOnAction(actionEvent ->  {
+			   
+			ToggleButton tg =(ToggleButton)actionEvent.getSource();
+			if(tg.isSelected()) {
+				tgModule.setGraphic(viewHematology);
+			}else {
+				tgModule.setGraphic(viewGeneral);
+			}
+		});
+		
+		box.getChildren().add(tgModule);
+    	
     }
 
     @FXML
@@ -106,7 +147,7 @@ public class AddPatientController {
     	}
     	
     	try {
-			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen);
+			m.getCl().addPatient(name, id, age, address, email, pregnant, several, disabled, oxigen, tgModule.isSelected());
 		} catch (StructureException e) {
 			
 			e.printStackTrace();

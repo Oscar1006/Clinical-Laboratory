@@ -22,10 +22,13 @@ public class ClinicLab {
 
 	private HashTable<String, Patient> patients;
 
-	private PriorityQueue<Patient> waitList;
+	private PriorityQueue<Patient> generalPrioWaitList;
+	private Queue<Patient> generalWaitList;
 
-	private Queue<Patient> normalPatients;
+	private PriorityQueue<Patient> hematologyPrioWaitList;
+	private Queue<Patient> hematologyWaitList;
 
+	
 	private int count;
 
 	private int lastTurn;
@@ -35,9 +38,13 @@ public class ClinicLab {
 
 		patients = new HashTable<>();
 
-		waitList = new PriorityQueue<>();
+		generalPrioWaitList = new PriorityQueue<>();
 
-		normalPatients = new Queue<>();
+		generalWaitList = new Queue<>();
+		
+		hematologyPrioWaitList = new PriorityQueue<>();
+		
+		hematologyWaitList = new Queue<>();
 
 		count = 1;
 		lastTurn = 0;
@@ -47,38 +54,65 @@ public class ClinicLab {
 		return patients;
 	}
 
-	public PriorityQueue<Patient> getWaitList() {
-		return waitList;
+	public PriorityQueue<Patient> getGeneralPrioWaitList() {
+		return generalPrioWaitList;
 	}
 
-	public Queue<Patient> getNormalWaitList() {
-		return normalPatients;
+	public Queue<Patient> getGeneralWaitList() {
+		return generalWaitList;
 	}
 
-	public void setNormalPatients(Queue<Patient> normalPatients) {
-		this.normalPatients = normalPatients;
+	public PriorityQueue<Patient> getHematologyPrioWaitList() {
+		return hematologyPrioWaitList;
+	}
+	
+	public Queue<Patient> getHematologyWaitList() {
+		return hematologyWaitList;
+	}
+	
+	public void setGeneralPatients(Queue<Patient> normalPatients) {
+		this.generalWaitList = normalPatients;
 	}
 
-	public void setWaitList(PriorityQueue<Patient> waitList) {
-		this.waitList = waitList;
+	public void setGeneralPrioPatients(PriorityQueue<Patient> waitList) {
+		this.generalPrioWaitList = waitList;
+	}
+	
+	public void setHematologyWaitList(Queue<Patient> hematologyWaitList) {
+		this.hematologyWaitList = hematologyWaitList;
+	}
+	
+	public void setHematologyPrioWaitList(PriorityQueue<Patient> hematologyPrioWaitList) {
+		this.hematologyPrioWaitList = hematologyPrioWaitList;
 	}
 
 	public void addPatient(String name, String id, int age, String address, String email, boolean pregnant,
-			boolean several, boolean disabled, boolean oxigen)
+			boolean several, boolean disabled, boolean oxigen, boolean module)
 			throws StructureException, NullPointerException, IOException {
 		Patient patient = new Patient(name, id, age, address, email, pregnant, several, disabled, oxigen);
 		
 		patients.insert(id, patient);
 
-		if (pregnant | several | disabled | oxigen | age<5 | age>60) {
-			waitList.insert(count, patient);
-			count++;
-		} else {
-			normalPatients.enqueue(patient);
-		}
+		if(module) {
 
-		Action act = new Action(Action.Type.ADD, patient);
-		addActionToUndo(act);
+			if (pregnant | several | disabled | oxigen | age<5 | age>60) {
+				hematologyPrioWaitList.insert(count, patient);
+				count++;
+			} else {
+				hematologyWaitList.enqueue(patient);
+			}
+
+		}else {
+			if (pregnant | several | disabled | oxigen | age<5 | age>60) {
+				generalPrioWaitList.insert(count, patient);
+				count++;
+			} else {
+				generalWaitList.enqueue(patient);
+			}
+
+			Action act = new Action(Action.Type.ADD, patient);
+			addActionToUndo(act);			
+		}
 	}
 
 	public Patient searchPatient(String id) {
@@ -122,52 +156,52 @@ public class ClinicLab {
 
 	
 	public void extractFromPQ() throws StructureException {
-		if(waitList.toArray().size()!=0) {
-			PriorityNode<Patient> elim=waitList.extractMaximum();
+		if(generalPrioWaitList.toArray().size()!=0) {
+			PriorityNode<Patient> elim=generalPrioWaitList.extractMaximum();
 			addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()));
 			lastTurn=elim.getEntery();
 		}
 	}
 	
 	public void dequeueFromQ() throws StructureException {
-		Element<Patient> elim=normalPatients.dequeue();
+		Element<Patient> elim=generalWaitList.dequeue();
 		addActionToUndo(new Action(Action.Type.DELETE, elim.getInfo()));
 	}
 	
 	public void undoToQ(String t) throws StructureException {
 		if(t.equalsIgnoreCase("add")) {
 			Queue<Patient> temp= new Queue<>();
-			while(!normalPatients.isEmpty()) {
-				if(normalPatients.front().getInfo()!=actionsToUndo.top().getInfo().getPatient())
-					temp.enqueue(normalPatients.dequeue().getInfo());
+			while(!generalWaitList.isEmpty()) {
+				if(generalWaitList.front().getInfo()!=actionsToUndo.top().getInfo().getPatient())
+					temp.enqueue(generalWaitList.dequeue().getInfo());
 				else
-					normalPatients.dequeue();
+					generalWaitList.dequeue();
 			}
-			normalPatients=temp;
+			generalWaitList=temp;
 			actionsToUndo.pop();
 		}
 		else {
-			normalPatients.enqueue(actionsToUndo.pop().getInfo().getPatient());
+			generalWaitList.enqueue(actionsToUndo.pop().getInfo().getPatient());
 		}
 	}
 	
 	public void undoToPQ(String t) throws StructureException {
 		if(t.equalsIgnoreCase("add")) {
 			PriorityQueue<Patient> temp= new PriorityQueue<>();
-			while(waitList.toArray().size()!=0) {
-				if(waitList.toArray().get(0).getPatient()!=actionsToUndo.top().getInfo().getPatient()) {
-					PriorityNode <Patient> temp2=waitList.extractMaximum();
+			while(generalPrioWaitList.toArray().size()!=0) {
+				if(generalPrioWaitList.toArray().get(0).getPatient()!=actionsToUndo.top().getInfo().getPatient()) {
+					PriorityNode <Patient> temp2=generalPrioWaitList.extractMaximum();
 					temp.insert(temp2.getEntery(), temp2.getPatient());
 				}
 				else
-					waitList.extractMaximum();	
+					generalPrioWaitList.extractMaximum();	
 			}
 			
-			waitList=temp;
+			generalPrioWaitList=temp;
 			actionsToUndo.pop();
 		}
 		else {
-			waitList.insert(lastTurn, actionsToUndo.pop().getInfo().getPatient());
+			generalPrioWaitList.insert(lastTurn, actionsToUndo.pop().getInfo().getPatient());
 		}
 	}
 
