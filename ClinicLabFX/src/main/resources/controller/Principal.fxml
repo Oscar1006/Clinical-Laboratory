@@ -16,7 +16,7 @@
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="99.0" prefWidth="1000.0">
          <children>
-            <ImageView accessibleHelp="deshacer" accessibleText="deshacer" fitHeight="92.0" fitWidth="113.0" onMouseClicked="#undo" pickOnBounds="true" preserveRatio="true">
+            <ImageView accessibleHelp="deshacer" accessibleText="deshacer" fitHeight="92.0" fitWidth="113.0" onMouseClicked="#undo2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/undo.png" />
                </image>
@@ -29,6 +29,11 @@
                   <Insets left="20.0" right="20.0" />
                </HBox.margin>
             </Label>
+            <ImageView accessibleHelp="deshacer" accessibleText="deshacer" fitHeight="92.0" fitWidth="113.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#undo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/undo.png" />
+               </image>
+            </ImageView>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="679.0" prefWidth="1000.0">

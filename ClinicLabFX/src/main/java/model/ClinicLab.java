@@ -93,24 +93,28 @@ public class ClinicLab {
 		
 		patients.insert(id, patient);
 
+		addPatientToList(patient, module);
+	}
+	
+	public void addPatientToList(Patient p, boolean module) throws StructureException {
 		if(module) {
 
-			if (pregnant | several | disabled | oxigen | age<5 | age>60) {
-				hematologyPrioWaitList.insert(count, patient);
+			if (p.isPregnant() | p.isSeveralDesease() | p.isDisabled() | p.isOxigenDependent() | p.getAge()<5 | p.getAge()>60) {
+				hematologyPrioWaitList.insert(count, p);
 				count++;
 			} else {
-				hematologyWaitList.enqueue(patient);
+				hematologyWaitList.enqueue(p);
 			}
 
 		}else {
-			if (pregnant | several | disabled | oxigen | age<5 | age>60) {
-				generalPrioWaitList.insert(count, patient);
+			if (p.isPregnant() | p.isSeveralDesease() | p.isDisabled() | p.isOxigenDependent() | p.getAge()<5 | p.getAge()>60) {
+				generalPrioWaitList.insert(count, p);
 				count++;
 			} else {
-				generalWaitList.enqueue(patient);
+				generalWaitList.enqueue(p);
 			}
 
-			Action act = new Action(Action.Type.ADD, patient);
+			Action act = new Action(Action.Type.ADD, p);
 			addActionToUndo(act);			
 		}
 	}
