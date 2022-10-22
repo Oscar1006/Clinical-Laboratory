@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
 
 public class Main extends Application {
 	
-	public static final String ICON_IMG = "file:../../../resources/images/medicine-logo.png";
+	public static final String ICON_IMG = "file:src/main/resources/controller/medicine-logo.png";
 	
 	private ClinicLab cl = new ClinicLab();
 	
@@ -41,6 +41,7 @@ public class Main extends Application {
 			newStage.getIcons().add(new Image(ICON_IMG));
 			newStage.setScene(scene);
 			newStage.show();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

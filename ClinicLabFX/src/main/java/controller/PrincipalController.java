@@ -27,21 +27,26 @@ public class PrincipalController {
 	private TableColumn<Patient, String> tcPatient;
 
 	@FXML
-	private TableView<Patient> tvPatient;
+	private TableColumn<Patient, String> tcPrio;
 
 	@FXML
-	private TableColumn<Patient, String> tcPrio;
+	private TableView<Patient> tvPatient;
 
 	@FXML
 	private TableView<Patient> tvPrio;
 
 	@FXML
+	private TableView<Patient> tvPatientH;
+
+	@FXML
+	private TableView<Patient> tvPrioH;
+
+	@FXML
 	private TextField txtSearch;
-	
+
 	private boolean conti;
-	
+
 	private int count;
-	
 
 	@FXML
 	private void initialize() {
@@ -53,11 +58,10 @@ public class PrincipalController {
 		// Table priority
 		tvPrio.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 		tcPrio.setCellValueFactory(new PropertyValueFactory<>("name"));
-		
-		conti=false;
-		
-		count=0;
-		
+
+		conti = false;
+
+		count = 0;
 
 	}
 
@@ -83,7 +87,7 @@ public class PrincipalController {
 		} catch (StructureException e) {
 			e.printStackTrace();
 		}
-		
+
 		initializeData();
 	}
 
@@ -110,14 +114,14 @@ public class PrincipalController {
 		ObservableList<Patient> p = FXCollections.observableArrayList(patientsArrayList);
 		tvPatient.setItems(p);
 		m.getCl().setNormalPatients(temporal);
-		
 
 		ArrayList<Patient> patientsPrioArrayList = new ArrayList<>();
 
 		PriorityQueue<Patient> temporalPrio = new PriorityQueue<>();
 
-		while (m.getCl().getWaitList().toArray().size()>0) {
-			temporalPrio.insert(m.getCl().getWaitList().maximum().getEntery(), m.getCl().getWaitList().maximum().getPatient());
+		while (m.getCl().getWaitList().toArray().size() > 0) {
+			temporalPrio.insert(m.getCl().getWaitList().maximum().getEntery(),
+					m.getCl().getWaitList().maximum().getPatient());
 			patientsPrioArrayList.add(m.getCl().getWaitList().extractMaximum().getPatient());
 		}
 		ObservableList<Patient> pp = FXCollections.observableArrayList(patientsPrioArrayList);
@@ -129,12 +133,12 @@ public class PrincipalController {
 	public void setM(Main m) {
 		this.m = m;
 	}
-	
+
 	public void startThread() {
 		Thread taskThread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				while(conti) {
+				while (conti) {
 
 					try {
 						Thread.sleep(60000);
@@ -145,30 +149,32 @@ public class PrincipalController {
 						@Override
 						public void run() {
 							try {
-								if(m.getCl().getWaitList().toArray().size()!=0 && (count%4!=0 | count==0)) {
+								if (m.getCl().getWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
 									m.getCl().extractFromPQ();
-								}
-								else if((!m.getCl().getNormalWaitList().isEmpty() && count%4==0)|(!m.getCl().getNormalWaitList().isEmpty() && m.getCl().getWaitList().toArray().size()==0)) {
+								} else if ((!m.getCl().getNormalWaitList().isEmpty() && count % 4 == 0)
+										| (!m.getCl().getNormalWaitList().isEmpty()
+												&& m.getCl().getWaitList().toArray().size() == 0)) {
 									m.getCl().dequeueFromQ();
 								}
 								initializeData();
 								count++;
 
-								if(m.getCl().getWaitList().toArray().size()==0 && m.getCl().getNormalWaitList().isEmpty()) {
-									conti=false;
+								if (m.getCl().getWaitList().toArray().size() == 0
+										&& m.getCl().getNormalWaitList().isEmpty()) {
+									conti = false;
 								}
 
 							} catch (StructureException e) {
 								e.printStackTrace();
 							}
 						}
-					}); 
+					});
 				}
 			}
 		});
 		taskThread.start();
 	}
-	
+
 	public void threadQueue() {
 		try {
 			m.getCl().dequeueFromQ();
@@ -176,10 +182,10 @@ public class PrincipalController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public boolean statusConti() {
-		boolean ok= conti;
-		conti=true;
+		boolean ok = conti;
+		conti = true;
 		return ok;
 	}
 }
