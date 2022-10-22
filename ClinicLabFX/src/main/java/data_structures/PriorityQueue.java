@@ -73,7 +73,6 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 			throw new StructureException();
 		}
 		else if(key<0 || key<((Patient) list.get(i-1).getPatient()).getWaitingTime()) {
-			System.out.println(((Patient) list.get(i-1).getPatient()).getWaitingTime());
 			throw new KeySmallerException();
 		}
 		else {
