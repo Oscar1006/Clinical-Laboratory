@@ -44,7 +44,8 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	private void changeIncElement(int i) {
 		if(list.size()>1) {
 			int parent=(i/2)-1;
-			while((i-1>0) && ((Patient) list.get(parent).getPatient()).compareTo((Patient) list.get(i-1).getPatient())<0) {
+			while((i-1>0) && (((Patient) list.get(parent).getPatient()).compareTo((Patient) list.get(i-1).getPatient())<0 | 
+					(((Patient) list.get(parent).getPatient()).compareTo((Patient) list.get(i-1).getPatient())==0 && list.get(parent).getEntery()-list.get(i-1).getEntery()>0))) {
 				PriorityNode<K> temp= list.get(parent);
 				list.set(parent, list.get(i-1));
 				list.set(i-1, temp);

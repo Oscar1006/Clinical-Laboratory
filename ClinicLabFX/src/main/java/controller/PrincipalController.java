@@ -101,7 +101,18 @@ public class PrincipalController {
 	@FXML
 	public void undo(MouseEvent event) {
 		try {
-			m.getCl().undoAction();
+			m.getCl().undoAction(true);
+		} catch (StructureException e) {
+			e.printStackTrace();
+		}
+
+		initializeData();
+	}
+	
+	@FXML
+	public void undo2(MouseEvent event) {
+		try {
+			m.getCl().undoAction(false);
 		} catch (StructureException e) {
 			e.printStackTrace();
 		}
@@ -171,7 +182,6 @@ public class PrincipalController {
 			try {
 				patientsPrioArrayList.add(q.extractMaximum().getPatient());
 			} catch (StructureException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -202,17 +212,23 @@ public class PrincipalController {
 						public void run() {
 							try {
 								if (m.getCl().getGeneralPrioWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
-									m.getCl().extractFromPQ();
-								} else if ((!m.getCl().getGeneralWaitList().isEmpty() && count % 4 == 0)
-										| (!m.getCl().getGeneralWaitList().isEmpty()
-												&& m.getCl().getGeneralPrioWaitList().toArray().size() == 0)) {
-									m.getCl().dequeueFromQ();
+									m.getCl().extractFromPQ(true);
+								} else if (!m.getCl().getGeneralWaitList().isEmpty()) {
+									m.getCl().dequeueFromQ(true);
 								}
+								
+								if (m.getCl().getHematologyPrioWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
+									m.getCl().extractFromPQ(false);
+								} else if (!m.getCl().getHematologyWaitList().isEmpty()) {
+									m.getCl().dequeueFromQ(false);
+								}
+								
 								initializeData();
 								count++;
 
 								if (m.getCl().getGeneralPrioWaitList().toArray().size() == 0
-										&& m.getCl().getGeneralWaitList().isEmpty()) {
+										&& m.getCl().getGeneralWaitList().isEmpty() && m.getCl().getHematologyPrioWaitList().toArray().size() == 0
+												&& m.getCl().getHematologyWaitList().isEmpty()) {
 									conti = false;
 								}
 
@@ -227,13 +243,6 @@ public class PrincipalController {
 		taskThread.start();
 	}
 
-	public void threadQueue() {
-		try {
-			m.getCl().dequeueFromQ();
-		} catch (StructureException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public boolean statusConti() {
 		boolean ok = conti;

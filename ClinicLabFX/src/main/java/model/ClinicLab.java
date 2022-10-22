@@ -19,6 +19,7 @@ import exception.StructureException;
 public class ClinicLab {
 
 	private Pile<Action> actionsToUndo;
+	private Pile<Action> actionsToUndo2;
 
 	private HashTable<String, Patient> patients;
 
@@ -31,10 +32,13 @@ public class ClinicLab {
 	
 	private int count;
 
-	private int lastTurn;
+	private Pile<Integer> lastTurn;
+	private Pile<Integer> lastTurn2;
 
 	public ClinicLab() {
 		actionsToUndo = new Pile<>();
+		
+		actionsToUndo2= new Pile<>();
 
 		patients = new HashTable<>();
 
@@ -47,7 +51,8 @@ public class ClinicLab {
 		hematologyWaitList = new Queue<>();
 
 		count = 1;
-		lastTurn = 0;
+		lastTurn = new Pile<>();
+		lastTurn2 = new Pile<>();
 	}
 
 	public HashTable<String, Patient> getPatients() {
@@ -105,7 +110,10 @@ public class ClinicLab {
 			} else {
 				hematologyWaitList.enqueue(p);
 			}
-
+			Action act = new Action(Action.Type.ADD, p);
+			addActionToUndo(act, false);
+			
+			
 		}else {
 			if (p.isPregnant() | p.isSeveralDesease() | p.isDisabled() | p.isOxigenDependent() | p.getAge()<5 | p.getAge()>60) {
 				generalPrioWaitList.insert(count, p);
@@ -115,7 +123,7 @@ public class ClinicLab {
 			}
 
 			Action act = new Action(Action.Type.ADD, p);
-			addActionToUndo(act);			
+			addActionToUndo(act, true);			
 		}
 	}
 
@@ -131,27 +139,56 @@ public class ClinicLab {
 		return patients.delete(id);
 	}
 
-	public void addActionToUndo(Action a) throws StructureException {
-		actionsToUndo.push(a);
+	public void addActionToUndo(Action a, boolean s) throws StructureException {
+		if(s) {
+			actionsToUndo.push(a);
+		}
+		else
+			actionsToUndo2.push(a);
 	}
 
-	public void undoAction () throws StructureException {
-		Element<Action> element = actionsToUndo.top();
-		Action toUndo = (Action)element.getInfo();
+	public void undoAction (boolean opt) throws StructureException {
+		Element<Action> element;
+		if(opt) {
+			element = actionsToUndo.top();
+		}
+		else {
+			element = actionsToUndo2.top();
+		}
 		
+		Action toUndo = (Action)element.getInfo();
 		switch (toUndo.getType()) {
 		case ADD:
 			patients.delete(toUndo.getPatient().getId());
-			if(toUndo.getPatient().isDisabled()|toUndo.getPatient().isOxigenDependent()| toUndo.getPatient().isPregnant()| toUndo.getPatient().isSeveralDesease() |toUndo.getPatient().getAge()<5 | toUndo.getPatient().getAge()>60)
-				undoToPQ("add");
-			else
-				undoToQ("add");
+			if(toUndo.getPatient().isDisabled()|toUndo.getPatient().isOxigenDependent()| toUndo.getPatient().isPregnant()| toUndo.getPatient().isSeveralDesease() |toUndo.getPatient().getAge()<5 | toUndo.getPatient().getAge()>60) {
+				if(opt)
+					undoToPQG("add");
+				else
+					undoToPQH("add");
+			}
+				
+			else {
+				if(opt)
+					undoToQG("add");
+				else
+					undoToQH("add");
+			}
+				
 			break;
 		case DELETE:
-			if(toUndo.getPatient().isDisabled()|toUndo.getPatient().isOxigenDependent()| toUndo.getPatient().isPregnant()| toUndo.getPatient().isSeveralDesease() |toUndo.getPatient().getAge()<5 | toUndo.getPatient().getAge()>60)
-				undoToPQ("delete");
-			else
-				undoToQ("delete");
+			if(toUndo.getPatient().isDisabled()|toUndo.getPatient().isOxigenDependent()| toUndo.getPatient().isPregnant()| toUndo.getPatient().isSeveralDesease() |toUndo.getPatient().getAge()<5 | toUndo.getPatient().getAge()>60) {
+				if(opt)
+					undoToPQG("delete");
+				else
+					undoToPQH("delete");
+			}
+				
+			else {
+				if(opt)
+					undoToQG("delete");
+				else
+					undoToQH("delete");
+			}
 		default:
 			break;
 		}
@@ -159,20 +196,76 @@ public class ClinicLab {
 	}
 
 	
-	public void extractFromPQ() throws StructureException {
-		if(generalPrioWaitList.toArray().size()!=0) {
-			PriorityNode<Patient> elim=generalPrioWaitList.extractMaximum();
-			addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()));
-			lastTurn=elim.getEntery();
+	private void undoToQH(String t) throws StructureException {
+		if(t.equalsIgnoreCase("add")) {
+			Queue<Patient> temp= new Queue<>();
+			while(!hematologyWaitList.isEmpty()) {
+				if(hematologyWaitList.front().getInfo()!=actionsToUndo2.top().getInfo().getPatient())
+					temp.enqueue(hematologyWaitList.dequeue().getInfo());
+				else
+					hematologyWaitList.dequeue();
+			}
+			hematologyWaitList=temp;
+			actionsToUndo2.pop();
 		}
+		else {
+			hematologyWaitList.enqueue(actionsToUndo2.pop().getInfo().getPatient());
+		}
+		
+	}
+
+	private void undoToPQH(String t) throws StructureException {
+		if(t.equalsIgnoreCase("add")) {
+			PriorityQueue<Patient> temp= new PriorityQueue<>();
+			while(hematologyPrioWaitList.toArray().size()!=0) {
+				if(hematologyPrioWaitList.toArray().get(0).getPatient()!=actionsToUndo2.top().getInfo().getPatient()) {
+					PriorityNode <Patient> temp2=hematologyPrioWaitList.extractMaximum();
+					temp.insert(temp2.getEntery(), temp2.getPatient());
+				}
+				else
+					hematologyPrioWaitList.extractMaximum();	
+			}
+			
+			hematologyPrioWaitList=temp;
+			actionsToUndo2.pop();
+		}
+		else {
+			hematologyPrioWaitList.insert(lastTurn2.pop().getInfo(), actionsToUndo2.pop().getInfo().getPatient());
+		}
+		
+	}
+
+	public void extractFromPQ(boolean opt) throws StructureException {
+		PriorityNode<Patient> elim;
+		if(opt) {
+			if(generalPrioWaitList.toArray().size()!=0) {
+				elim=generalPrioWaitList.extractMaximum();
+				addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()), opt);
+				lastTurn.push(elim.getEntery());
+			}
+		}
+		else {
+			if(hematologyPrioWaitList.toArray().size()!=0) {
+				elim=hematologyPrioWaitList.extractMaximum();
+				addActionToUndo(new Action(Action.Type.DELETE, elim.getPatient()), opt);
+				lastTurn2.push(elim.getEntery());
+			}
+		}
+		
 	}
 	
-	public void dequeueFromQ() throws StructureException {
-		Element<Patient> elim=generalWaitList.dequeue();
-		addActionToUndo(new Action(Action.Type.DELETE, elim.getInfo()));
+	public void dequeueFromQ(boolean opt) throws StructureException {
+		Element<Patient> elim;
+		if(opt) {
+			elim=generalWaitList.dequeue();
+		}else {
+			elim=hematologyWaitList.dequeue();
+		}
+		addActionToUndo(new Action(Action.Type.DELETE, elim.getInfo()), opt);
+		
 	}
 	
-	public void undoToQ(String t) throws StructureException {
+	public void undoToQG(String t) throws StructureException {
 		if(t.equalsIgnoreCase("add")) {
 			Queue<Patient> temp= new Queue<>();
 			while(!generalWaitList.isEmpty()) {
@@ -189,7 +282,7 @@ public class ClinicLab {
 		}
 	}
 	
-	public void undoToPQ(String t) throws StructureException {
+	public void undoToPQG(String t) throws StructureException {
 		if(t.equalsIgnoreCase("add")) {
 			PriorityQueue<Patient> temp= new PriorityQueue<>();
 			while(generalPrioWaitList.toArray().size()!=0) {
@@ -205,7 +298,7 @@ public class ClinicLab {
 			actionsToUndo.pop();
 		}
 		else {
-			generalPrioWaitList.insert(lastTurn, actionsToUndo.pop().getInfo().getPatient());
+			generalPrioWaitList.insert(lastTurn.pop().getInfo(), actionsToUndo.pop().getInfo().getPatient());
 		}
 	}
 
