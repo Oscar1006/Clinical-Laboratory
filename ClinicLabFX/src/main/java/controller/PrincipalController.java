@@ -166,22 +166,14 @@ public class PrincipalController {
 
 		PriorityQueue<Patient> temporalPrio = new PriorityQueue<>();
 
-<<<<<<< HEAD
 		while (q.toArray().size() > 0) {
 			temporalPrio.insert(q.maximum().getEntery(),q.maximum().getPatient());
-			patientsPrioArrayList.add(q.extractMaximum().getPatient());
-=======
-
-		while (m.getCl().getWaitList().toArray().size() > 0) {
-			temporalPrio.insert(m.getCl().getWaitList().maximum().getEntery(),
-					m.getCl().getWaitList().maximum().getPatient());
 			try {
-				patientsPrioArrayList.add(m.getCl().getWaitList().extractMaximum().getPatient());
+				patientsPrioArrayList.add(q.extractMaximum().getPatient());
 			} catch (StructureException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
->>>>>>> branch 'master' of https://github.com/Oscar1006/Clinical-Laboratory.git
 		}
 		Queues pqs = new Queues(patientsPrioArrayList, temporalPrio);
 		return pqs;
@@ -211,13 +203,9 @@ public class PrincipalController {
 							try {
 								if (m.getCl().getGeneralPrioWaitList().toArray().size() != 0 && (count % 4 != 0 | count == 0)) {
 									m.getCl().extractFromPQ();
-<<<<<<< HEAD
 								} else if ((!m.getCl().getGeneralWaitList().isEmpty() && count % 4 == 0)
 										| (!m.getCl().getGeneralWaitList().isEmpty()
 												&& m.getCl().getGeneralPrioWaitList().toArray().size() == 0)) {
-=======
-								} else if ((!m.getCl().getNormalWaitList().isEmpty())) {
->>>>>>> branch 'master' of https://github.com/Oscar1006/Clinical-Laboratory.git
 									m.getCl().dequeueFromQ();
 								}
 								initializeData();
@@ -226,7 +214,6 @@ public class PrincipalController {
 								if (m.getCl().getGeneralPrioWaitList().toArray().size() == 0
 										&& m.getCl().getGeneralWaitList().isEmpty()) {
 									conti = false;
-
 								}
 
 							} catch (StructureException e) {
