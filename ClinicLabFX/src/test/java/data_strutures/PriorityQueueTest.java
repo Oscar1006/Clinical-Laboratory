@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import data_structures.PriorityQueue;
+import exception.KeySmallerException;
+import exception.StructureException;
 import model.Patient;
 
 public class PriorityQueueTest {
@@ -21,40 +23,129 @@ public class PriorityQueueTest {
 		pq.insert(3, new Patient("c", "c", 30, "m", "m", true, true, true, false));
 	}
 	
+	@Test
+	public void testExtractMaximum1() {
+		setUp1();
+		try {
+			pq.extractMaximum();
+			fail("Deberia lanzar una excepcion");
+		} catch (StructureException e) {
+			e.getMessage();
+		}
+		
+	}
 	
-
 	@Test
-	public void testExtractMaximum() {
+	public void testExtractMaximum2() {
+		setUp2();
+		try {
+			assertEquals("No esta extrayendo bien",3,pq.extractMaximum().getEntery());
+		} catch (StructureException e) {
+			fail("No deberia lanzar una excepcion");
+		}
+		
+	}
+	
+	@Test
+	public void testExtractMaximum3() {
 		setUp2();
 		pq.insert(4, new Patient("d", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(5, new Patient("e", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(6, new Patient("f", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(7, new Patient("h", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(8, new Patient("i", "c", 30, "m", "m", true, true, true, true));
-		assertEquals("No estas insertando bien",4,pq.extractMaximum().getEntery());
-		assertEquals("No estas insertando bien",5,pq.extractMaximum().getEntery());
-		assertEquals("No estas insertando bien",6,pq.extractMaximum().getEntery());
-		assertEquals("No estas insertando bien",7,pq.extractMaximum().getEntery());
+		try {
+			assertEquals("No esta extrayendo bien",4,pq.extractMaximum().getEntery());
+		} catch (StructureException e) {
+			fail("No deberia lanzar una excepcion");
+		}
 		
 	}
 
 	@Test
-	public void testInsert() {
-		setUp2();
-		
+	public void testInsert1() {
+		setUp1();
 		pq.insert(4, new Patient("d", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(5, new Patient("e", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(6, new Patient("f", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(7, new Patient("h", "c", 30, "m", "m", true, true, true, true));
-		pq.insert(8, new Patient("i", "c", 30, "m", "m", true, true, true, true));
-		
-		assertEquals("No estas insertando bien","d",((Patient)pq.extractMaximum().getPatient()).getName());
+		try {
+			assertEquals("No esta insertando bien","d",((Patient)pq.extractMaximum().getPatient()).getName());
+		} catch (StructureException e) {
+			fail("No deberia lanzar una excepcion");
+		}
 		
 	}
-	/*
+	
 	@Test
-	public void testIncrease_Key() {
-		fail("Not yet implemented");
-	}*/
-
+	public void testInsert2() {
+		setUp2();
+		pq.insert(4, new Patient("d", "c", 30, "m", "m", true, true, true, false));
+		try {
+			pq.extractMaximum();
+			assertEquals("No esta insertando bien","d",((Patient)pq.extractMaximum().getPatient()).getName());
+		} catch (StructureException e) {
+			fail("No deberia lanzar una excepcion");
+		}
+		
+	}
+	
+	@Test
+	public void testInsert3() {
+		setUp2();
+		
+		pq.insert(4, new Patient("d", "c", 30, "m", "m", true, true, false, false));
+		try {
+			pq.extractMaximum();
+			pq.extractMaximum();
+			assertEquals("No esta insertando bien","d",((Patient)pq.extractMaximum().getPatient()).getName());
+		} catch (StructureException e) {
+			e.getMessage();
+		}
+		
+	}
+	
+	@Test
+	public void testIncrease_Key1() {
+		setUp1();
+		try {
+			pq.increase_Key(1, 12);
+			fail("Deberia fallar");
+		} catch (IndexOutOfBoundsException | KeySmallerException | StructureException e) {
+			e.getMessage();
+		}
+	}
+	
+	@Test
+	public void testIncrease_Key2() {
+		setUp2();
+		try {
+			pq.increase_Key(1, 0);
+			fail("Deberia fallar");
+		} catch (IndexOutOfBoundsException | KeySmallerException | StructureException e) {
+			e.getMessage();
+		}
+	}
+	
+	@Test
+	public void testIncrease_Key3() {
+		setUp2();
+		try {
+			pq.increase_Key(3,50);
+			assertEquals("No esta incrementando bien","b",((Patient)pq.extractMaximum().getPatient()).getName());
+		} catch (IndexOutOfBoundsException | KeySmallerException | StructureException e) {
+			fail("No deberia fallar");
+		}
+	}
+	
+	@Test
+	public void testMaximum1() {
+		setUp1();
+		assertEquals("No estas trayendo el nulo",null,pq.maximum());
+	}
+	@Test
+	public void testMaximum2() {
+		setUp2();
+		assertEquals("No estas trayendo el primer elemento","c",((Patient)pq.maximum().getPatient()).getName());
+	}
+	@Test
+	public void testMaximum3() {
+		setUp2();
+		pq.insert(4, new Patient("d", "c", 30, "m", "m", true, true, true, true));
+		assertEquals("No estas trayendo el primer elemento","d",((Patient)pq.maximum().getPatient()).getName());
+	}
+	
 }

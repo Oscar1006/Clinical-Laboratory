@@ -1,6 +1,9 @@
 package data_structures;
 
 import java.util.ArrayList;
+
+import exception.KeySmallerException;
+import exception.StructureException;
 import model.Patient;
 
 public class PriorityQueue<K> implements IPriorityQueue<K> {
@@ -13,17 +16,21 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	
 	@Override
 	public PriorityNode<K> maximum(){
-		return list.get(0);
+		if(list.isEmpty())
+			return null;
+		else
+			return list.get(0);
 	}
 	
 	@Override
-	public PriorityNode<K> extractMaximum(){
-		if(list.get(0)==null)
-			return null;
+	public PriorityNode<K> extractMaximum() throws StructureException{
+		if(list.isEmpty()) {
+			throw new StructureException();
+		}
+			
 		else if(list.size() == 1){
 			return list.remove(0);
 		}
-		
 		else {
 			PriorityNode<K> max = list.get(0);
  			list.set(0, list.get(list.size()-1));
@@ -61,14 +68,16 @@ public class PriorityQueue<K> implements IPriorityQueue<K> {
 	
 	
 	@Override
-	public boolean increase_Key(int i, int key) {
-		if(key<0) {
-			return false;
+	public void increase_Key(int i, int key) throws KeySmallerException, StructureException, IndexOutOfBoundsException {
+		if(list.isEmpty()) {
+			throw new StructureException();
+		}
+		else if(key<0 || key<((Patient) list.get(i-1).getPatient()).getWaitingTime()) {
+			throw new KeySmallerException();
 		}
 		else {
-			((Patient) list.get(i).getPatient()).setWaitingTime(key);
+			((Patient) list.get(i-1).getPatient()).setWaitingTime(key);
 			changeIncElement(i);
-			return true;
 		}
 			
 	}
