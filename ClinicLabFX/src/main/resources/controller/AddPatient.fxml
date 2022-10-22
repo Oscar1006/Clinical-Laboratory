@@ -5,10 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <HBox prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPatientController">
    <children>
@@ -175,15 +175,7 @@
       </VBox>
       <VBox fx:id="box" alignment="CENTER" prefHeight="581.0" prefWidth="349.0">
          <children>
-            <HBox alignment="CENTER" minHeight="88.0">
-               <children>
-                  <Button minHeight="33.0" minWidth="155.0" mnemonicParsing="false" onAction="#addPatient" text="Añadir">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
+            <ToggleButton fx:id="tgModule" mnemonicParsing="false" prefHeight="250.0" prefWidth="250.0" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label text="Escoja un modulo haciendo clic en la imagen">
@@ -194,6 +186,15 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" minHeight="88.0">
+               <children>
+                  <Button minHeight="33.0" minWidth="155.0" mnemonicParsing="false" onAction="#addPatient" text="Añadir">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
          </children>

@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import model.ClinicLab;
+import model.Patient;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -26,10 +27,12 @@ public class Main extends Application {
 	private FXMLLoader loader;
 	
 	private PrincipalController principal;
-	private AddPatientController controller;
+	private AddPatientController add;
+
 	
 	@Override
 	public void start(Stage primaryStage) {
+		cl.readDataBase();
 
 		try {
 			loader = new FXMLLoader(getClass().getResource("Principal.fxml"));
@@ -46,20 +49,27 @@ public class Main extends Application {
 			newStage.setScene(scene);
 			newStage.show();
 			
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	@Override
+    public void stop() {
+        // executed when the application shuts down
+		cl.writeDataBase();
+    }
+	
 	public void showAddPatient() {
-		controller = new AddPatientController();
+		add = new AddPatientController();
 		try {
 			loader = new FXMLLoader(getClass().getResource("AddPatient.fxml"));
 			
 			root = loader.load();
-			controller = loader.getController();
+			add = loader.getController();
 			
-			controller.setM(this);
+			add.setM(this);
 			
 			
 			
@@ -83,11 +93,14 @@ public class Main extends Application {
 	public ClinicLab getCl() {
 		return cl;
 	}
+	public void setPrincipal(PrincipalController principal) {
+		this.principal = principal;
+	}
 	public PrincipalController getPrincipal() {
 		return principal;
 	}
 	public AddPatientController getAddController() {
-		return controller;
+		return add;
 	}
 	
 }

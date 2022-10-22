@@ -59,6 +59,7 @@ public class AddPatientController {
     @FXML
     private VBox box;
     
+    
     @FXML
     private ToggleButton tgModule;
     
@@ -102,7 +103,7 @@ public class AddPatientController {
     	
 		viewHematology.setFitHeight(222);
 		viewHematology.setPreserveRatio(true);
-		tgModule = new ToggleButton();
+	
 		tgModule.setGraphic(viewGeneral);
 		
 		tgModule.setOnAction(actionEvent ->  {
@@ -115,7 +116,7 @@ public class AddPatientController {
 			}
 		});
 		
-		box.getChildren().add(tgModule);
+	
     	
     }
 
