@@ -1,16 +1,501 @@
-Bert Carter,1328547735,30,Sincelejo,bertcarter4227@gmail.com,7,7,1,1
-Evelyn Rasmussen,1093721418,85,Sahagún,evelynrasmussen8738@hotmail.com,1,1,7,7
-Nita Hubbard,1113933391,21,Paz de Ariporo,nitahubbard@gmail.com,1,7,7,1
-Simone Foster,1347247671,56,Istmina,simonefoster6283@yahoo.com,1,1,7,7
-Buffy Lynn,1995127111,34,Itagüí,buffylynn@hotmail.com,1,7,1,1
-Aurelia Waters,1150744445,75,Ibagué,aureliawaters@hotmail.com,1,7,1,1
-Holmes Workman,1911404280,66,San José del Guaviare,holmesworkman8863@yahoo.com,7,1,7,1
-Kasper Shelton,1213184139,8,Aguazul,kaspershelton@yahoo.com,1,7,1,1
-Ocean Zamora,1090008974,29,Miraflores,oceanzamora5078@outlook.com,1,7,1,1
-Martha Gutierrez,1854904766,78,Itagüí,marthagutierrez@outlook.com,7,7,1,7
-Zoe Lott,1811696237,63,Calamar,zoelott@yahoo.com,1,1,7,7
-Steel Church,1045640634,84,Mitú,steelchurch@gmail.com,1,7,1,7
-b,12131233333,23,qds,asd,1,7,1,7
-Brent Knowles,1192217816,4,Tuluá,brentknowles4149@yahoo.com,7,7,1,1
-Howard Reilly,1832813856,36,Barranco Minas,howardreilly5556@hotmail.com,7,7,1,1
-Kamal Blankenship,1420366335,86,Puerto López,kamalblankenship7155@yahoo.com,1,1,1,7
+name,id,age,address,email,pregnant,several,disabled,oxigen
+Whitney Edwards,1886990321,37,Piedecuesta,whitneyedwards8454@gmail.com,7,2,2,4
+Colette Bowers,1009826346,32,Duitama,colettebowers6281@hotmail.com,2,3,2,5
+Holmes Petersen,1656511195,71,Alto Baudó,holmespetersen@hotmail.com,3,1,2,0
+Catherine Wolf,1449253352,43,Istmina,catherinewolf@hotmail.com,5,1,4,1
+Forrest Patrick,1790968478,67,Alto Baudó,forrestpatrick@outlook.com,3,3,9,10
+Alan Roy,1335321843,62,Florencia,alanroy9335@outlook.com,9,2,0,2
+Keelie Webster,1171318066,28,Yopal,keeliewebster1183@outlook.com,0,8,1,9
+Evelyn Mckenzie,1892602819,89,San Andrés,evelynmckenzie@hotmail.com,5,2,5,8
+Blossom Santana,1524917104,83,Puerto López,blossomsantana@gmail.com,3,6,0,3
+Nichole Mayo,1258975150,72,Puerto López,nicholemayo8131@outlook.com,6,0,7,5
+Walker Glass,1049983236,37,Santa Cruz de Lorica,walkerglass2299@outlook.com,5,0,5,5
+Bert Schroeder,1986127848,45,Barrancabermeja,bertschroeder4237@gmail.com,6,4,10,4
+Sydnee Welch,1945893571,81,Riosucio,sydneewelch5615@hotmail.com,2,4,8,9
+Lavinia Vincent,1463425201,12,Bello,laviniavincent2975@outlook.com,5,8,2,10
+Brooke Phelps,1443141783,33,Montelíbano,brookephelps@outlook.com,6,7,6,8
+Gareth Burnett,1124434761,29,Garzón,garethburnett@yahoo.com,10,9,6,0
+Kylan Woodard,1022773216,23,Bogotá,kylanwoodard@gmail.com,6,2,3,4
+Knox Wilson,1255262409,50,La Tebaida,knoxwilson@gmail.com,6,6,10,5
+Ella Jenkins,1094092420,29,Montenegro,ellajenkins5102@yahoo.com,5,4,9,2
+Hyatt Battle,1767822751,59,Cereté,hyattbattle7037@gmail.com,1,3,6,2
+Tanya Lang,1808235452,12,Chiquinquirá,tanyalang421@yahoo.com,9,8,9,0
+Amber Baxter,1284121105,62,Quibdó,amberbaxter3672@yahoo.com,5,10,1,7
+Kiayada Boyle,1545085680,90,Agustín Codazzi,kiayadaboyle@gmail.com,10,6,0,2
+Caldwell Velazquez,1087509653,42,Cúcuta,caldwellvelazquez8534@gmail.com,6,3,2,0
+Jamalia Maldonado,1345831091,68,Calamar,jamaliamaldonado@hotmail.com,10,5,1,1
+Autumn Levy,1152514356,16,Tumaco,autumnlevy5008@yahoo.com,8,7,1,7
+Mariko Morse,1183819236,71,Barranco Minas,marikomorse2526@hotmail.com,3,8,2,8
+Arsenio Miranda,1729591165,66,Santander de Quilichao,arseniomiranda6900@hotmail.com,10,6,7,7
+Glenna Bowman,1787580832,87,Piedecuesta,glennabowman@outlook.com,3,6,8,7
+Farrah Wolf,1486920357,27,Calarcá,farrahwolf@outlook.com,7,8,7,7
+Jerome Gordon,1536066473,89,Cali,jeromegordon9591@outlook.com,3,3,1,3
+Wade Buckley,1270202165,71,Ipiales,wadebuckley3307@hotmail.com,4,0,8,6
+Griffin Ford,1658580516,25,San Vicente del Caguán,griffinford@yahoo.com,5,9,8,4
+Velma Stevenson,1973423277,78,Maicao,velmastevenson@gmail.com,10,2,2,1
+Jamal Marquez,1855016699,80,Barranco Minas,jamalmarquez8298@gmail.com,6,0,3,6
+Jasper Stephenson,1390465703,25,Tumaco,jasperstephenson@gmail.com,3,4,6,5
+Ryder Harrell,1916818859,2,Popayán,ryderharrell9161@gmail.com,0,8,8,1
+Dale Dyer,1223369579,50,Soledad,daledyer@gmail.com,3,8,9,1
+Wang Kemp,1995149980,68,Buenaventura,wangkemp@gmail.com,4,2,0,4
+Noelani Reese,1609446259,58,Ibagué,noelanireese@outlook.com,8,5,6,7
+Madeline Orr,1883665176,20,Cereté,madelineorr8349@outlook.com,4,8,4,4
+Grant Lester,1742313467,60,Aguachica,grantlester@yahoo.com,1,6,10,6
+Mara Foley,1545722481,4,Manaure,marafoley890@yahoo.com,9,2,5,5
+Dale Garner,1245694252,68,Cartagena del Chairá,dalegarner@gmail.com,5,7,5,8
+Byron Lewis,1001138133,72,Puerto Guzmán,byronlewis@gmail.com,3,7,2,7
+Geoffrey Gibbs,1517899407,19,Inírida,geoffreygibbs3788@gmail.com,7,9,7,1
+Jillian Burton,1292681784,56,San Andrés,jillianburton3336@hotmail.com,3,3,2,5
+Petra Garcia,1184133579,33,El Retorno,petragarcia@outlook.com,4,1,1,7
+Donovan Irwin,1631106496,73,Chía,donovanirwin7537@outlook.com,4,1,8,1
+Nissim Mckenzie,1887182381,86,El Tambo,nissimmckenzie9675@outlook.com,9,9,4,3
+Seth Dejesus,1990413769,32,Mocoa,sethdejesus@hotmail.com,4,6,2,9
+Brenden Mccarthy,1162226649,84,Bogotá,brendenmccarthy8290@yahoo.com,8,1,6,3
+Madison Mcintosh,1468026601,47,Neiva,madisonmcintosh6146@yahoo.com,6,9,6,5
+Tanner Fischer,1823991989,62,Cartagena del Chairá,tannerfischer5595@yahoo.com,3,9,4,4
+Harding Jacobson,1318913040,68,San Andrés,hardingjacobson@gmail.com,6,1,1,4
+Jamal Lynn,1037593897,42,Malambo,jamallynn8690@gmail.com,8,2,4,5
+Faith Walters,1347741213,45,Barranco Minas,faithwalters@hotmail.com,6,5,1,6
+Xyla Hart,1065134470,34,Manizales,xylahart5144@outlook.com,0,2,6,4
+Tanek Manning,1816816579,52,Pacoa,tanekmanning6734@outlook.com,9,3,7,7
+Bethany Lang,1174488202,25,El Tambo,bethanylang6140@hotmail.com,2,0,1,2
+Jacqueline Curtis,1366809178,4,Paz de Ariporo,jacquelinecurtis5488@hotmail.com,3,8,4,9
+Aquila Wheeler,1491353009,22,Magangué,aquilawheeler@hotmail.com,3,2,5,3
+Riley Suarez,1091154117,61,Quibdó,rileysuarez@gmail.com,2,7,5,3
+Dean Shaffer,1772821302,42,Montería,deanshaffer@gmail.com,8,0,1,0
+Kieran Benjamin,1055810488,4,Alto Baudó,kieranbenjamin@yahoo.com,0,1,0,1
+Aspen Preston,1244184629,27,Calamar,aspenpreston5284@yahoo.com,4,3,6,3
+Dean Sherman,1911063696,40,Pamplona,deansherman8440@gmail.com,1,8,5,0
+Ariana Meyers,1615108005,20,Ibagué,arianameyers4090@outlook.com,6,8,2,7
+Tasha Jennings,1167642673,26,Santa Cruz de Lorica,tashajennings@outlook.com,4,5,4,3
+Chaney Todd,1191807753,58,Aguazul,chaneytodd@hotmail.com,5,7,6,2
+Anika Cook,1828246998,46,Valledupar,anikacook537@hotmail.com,10,6,3,2
+Jin Lowery,1783927887,20,Chiquinquirá,jinlowery9578@outlook.com,1,1,6,8
+Leslie King,1968030038,64,San Andrés,leslieking@yahoo.com,1,6,1,3
+Jillian Browning,1346620804,29,Montenegro,jillianbrowning@yahoo.com,6,6,5,2
+Merrill Hodge,1269743685,80,Mocoa,merrillhodge5760@outlook.com,6,4,6,4
+Perry Stokes,1597222499,29,Puerto Nariño,perrystokes7845@gmail.com,4,6,2,8
+Edward Trujillo,1770931023,76,Buenaventura,edwardtrujillo9848@outlook.com,1,7,0,9
+Sawyer Leach,1861289887,5,Riosucio,sawyerleach6861@hotmail.com,7,4,1,4
+Idona Rojas,1932039341,21,Puerto Colombia,idonarojas4042@gmail.com,6,9,2,2
+David Daniels,1203825613,78,Mocoa,daviddaniels@outlook.com,8,4,7,4
+Belle Stokes,1204781169,71,Tuluá,bellestokes@outlook.com,3,9,2,0
+Angela Hogan,1382139359,50,Saravena,angelahogan@outlook.com,5,1,0,1
+Velma Harris,1329155123,13,Mitú,velmaharris@hotmail.com,3,5,5,6
+Xaviera Wilcox,1210933783,27,Soledad,xavierawilcox6578@yahoo.com,5,8,7,0
+Jamalia Hayden,1380042890,73,Riosucio,jamaliahayden9859@yahoo.com,5,6,8,1
+Raja English,1021142714,25,Agustín Codazzi,rajaenglish@yahoo.com,0,5,0,7
+Charlotte Tanner,1945634288,49,San Juan de Girón,charlottetanner@gmail.com,6,8,0,2
+Beau Farmer,1963368995,66,Dosquebradas,beaufarmer@gmail.com,9,2,4,1
+Joshua Gordon,1304759646,16,Bogotá,joshuagordon@gmail.com,10,2,8,7
+Harper Tillman,1458241706,17,San Marcos,harpertillman6528@hotmail.com,8,6,2,5
+Mark Chan,1800404008,48,Pitalito,markchan@yahoo.com,5,8,5,8
+Charlotte Hansen,1348530524,8,Soledad,charlottehansen@hotmail.com,1,8,4,4
+Ann Hammond,1913312777,55,Aguazul,annhammond@yahoo.com,4,1,3,6
+Kibo Ramsey,1381559929,3,San José del Guaviare,kiboramsey@outlook.com,8,6,10,1
+Gail Mitchell,1799862513,40,Quibdó,gailmitchell272@outlook.com,0,9,6,8
+Abraham Snider,1129178809,68,Medio Atrato,abrahamsnider9996@hotmail.com,2,8,4,6
+Oliver Boyd,1407873117,71,Cúcuta,oliverboyd6776@gmail.com,8,7,6,4
+Otto Dawson,1470262361,1,Puerto López,ottodawson@outlook.com,1,1,1,9
+Carl Cotton,1080587246,2,Medio Atrato,carlcotton@gmail.com,5,10,3,0
+Oren Allison,1105057994,3,Puerto López,orenallison8301@gmail.com,1,8,2,4
+Shaine Bernard,1628431426,27,Aguachica,shainebernard1223@hotmail.com,0,10,3,6
+Eric Weeks,1907441857,65,Medio Atrato,ericweeks@yahoo.com,8,1,5,3
+Winifred Koch,1113053463,59,Mitú,winifredkoch4030@gmail.com,1,7,1,4
+Nissim England,1409119385,86,Ocaña,nissimengland6813@outlook.com,2,3,6,6
+Kyra Franks,1040018448,13,Inírida,kyrafranks@yahoo.com,7,2,9,4
+Tanek Lynch,1052044573,49,Florencia,taneklynch@gmail.com,8,8,3,2
+Wing Cunningham,1768093313,52,Cúcuta,wingcunningham@outlook.com,1,2,7,5
+Susan Wall,1584675116,59,Puerto Colombia,susanwall@outlook.com,4,1,8,7
+Charde Bolton,1975948157,39,Tame,chardebolton@outlook.com,2,2,10,8
+Tanner French,1245815530,57,Santander de Quilichao,tannerfrench347@hotmail.com,2,8,6,5
+Xavier Carroll,1566496319,73,Valle del Guamuez,xaviercarroll4973@hotmail.com,2,8,1,4
+Lavinia Blevins,1647331341,83,Cumaribo,laviniablevins1065@hotmail.com,1,8,3,9
+Ciara Gross,1348329181,15,Tumaco,ciaragross@outlook.com,6,1,7,8
+Wynter Valenzuela,1038495117,49,Puerto Colombia,wyntervalenzuela3528@gmail.com,8,3,7,9
+Emi Mosley,1354637393,35,Arauca,emimosley2288@yahoo.com,7,7,0,5
+Vernon Ramsey,1486698276,62,Cartagena del Chairá,vernonramsey@outlook.com,9,2,4,4
+Chiquita Fox,1343485156,49,La Dorada,chiquitafox@yahoo.com,7,3,2,2
+Orli Macias,1632300695,43,Valle del Guamuez,orlimacias@gmail.com,7,3,7,1
+Alyssa Guy,1794755277,62,Cumaribo,alyssaguy2256@hotmail.com,1,7,2,3
+Maggie Golden,1513173213,66,Pereira,maggiegolden9039@hotmail.com,7,5,9,6
+Vincent Huff,1076331189,62,Bogotá,vincenthuff9617@hotmail.com,5,1,2,7
+Brock Madden,1729035524,52,Los Patios,brockmadden9916@outlook.com,8,5,0,9
+Elijah Morris,1150138240,7,Carmen de Bolivar,elijahmorris@gmail.com,3,3,2,2
+Harding Daniels,1456908165,22,Duitama,hardingdaniels6303@gmail.com,2,10,5,6
+John Bass,1675630296,75,Cumaribo,johnbass@hotmail.com,9,10,3,0
+Quentin Wynn,1706323146,6,La Dorada,quentinwynn1361@yahoo.com,0,6,9,8
+Zephania Mcmillan,1171464801,22,Puerto Nariño,zephaniamcmillan7959@outlook.com,6,1,9,3
+Fuller Williamson,1758504077,49,Neiva,fullerwilliamson3447@hotmail.com,3,10,1,3
+Murphy Kline,1776813275,80,Dosquebradas,murphykline4420@yahoo.com,2,8,10,3
+Virginia Knapp,1360920898,45,Maicao,virginiaknapp@hotmail.com,5,8,8,2
+Stewart Thornton,1997809297,69,Cereté,stewartthornton@outlook.com,4,8,10,6
+Demetria Cain,1637430526,35,Mitú,demetriacain@yahoo.com,9,3,6,2
+Nora Terrell,1175098127,54,Zipaquirá,noraterrell4085@gmail.com,8,8,5,1
+Oscar Blair,1831463899,36,Barranco Minas,oscarblair@yahoo.com,4,0,6,1
+Haviva Richards,1443532700,80,Pacoa,havivarichards@yahoo.com,5,4,1,9
+Victor Sanders,1188767789,11,Zona Bananera,victorsanders3917@gmail.com,5,8,4,2
+Rae Cruz,1029246599,54,Alto Baudó,raecruz5716@hotmail.com,4,0,7,1
+Yoshi Barton,1332303268,26,Magangué,yoshibarton@gmail.com,5,5,2,10
+Silas Simpson,1412304961,64,Montelíbano,silassimpson@outlook.com,1,9,6,10
+Macon Parrish,1299711006,75,Pacoa,maconparrish@hotmail.com,8,6,9,3
+Price Miles,1507451073,27,Bogotá,pricemiles8276@yahoo.com,8,6,5,6
+Laith Hughes,1788166868,84,Floridablanca,laithhughes@hotmail.com,3,2,4,7
+Harriet Mccray,1342716878,58,Mosquera,harrietmccray3196@outlook.com,0,0,9,5
+Baxter Hood,1322883748,15,San Marcos,baxterhood@outlook.com,3,5,0,3
+Serina Rutledge,1107522289,71,Quimbaya,serinarutledge9968@hotmail.com,9,1,4,5
+Aspen Rollins,1737569494,76,Palmira,aspenrollins2897@gmail.com,1,3,10,9
+Lyle Golden,1192715905,41,San Marcos,lylegolden@yahoo.com,2,8,0,7
+Roth Hewitt,1761413866,42,Puerto Nariño,rothhewitt480@yahoo.com,2,6,4,9
+Marvin Walters,1049832537,88,Puerto Nariño,marvinwalters@gmail.com,8,9,4,8
+Price Sweet,1391236535,61,Bogotá,pricesweet1275@gmail.com,4,2,4,2
+Autumn Shields,1537192205,18,Sincelejo,autumnshields85@yahoo.com,4,9,9,1
+Hamish Weaver,1698576126,53,Bogotá,hamishweaver6376@yahoo.com,8,9,7,3
+Donovan Lawson,1174075097,79,Bogotá,donovanlawson@gmail.com,3,8,2,1
+Carolyn Hawkins,1847686999,58,Malambo,carolynhawkins@hotmail.com,7,1,4,5
+Serina Aguilar,1941576972,88,Santa Rosa de Cabal,serinaaguilar@outlook.com,8,2,9,1
+Curran Abbott,1646166713,54,Envigado,curranabbott@hotmail.com,9,1,10,5
+Kim Young,1001908594,24,Mitú,kimyoung1211@hotmail.com,5,2,5,8
+Ruth Daniel,1958230884,27,Cartagena,ruthdaniel1963@hotmail.com,3,2,1,1
+Roanna Knowles,1579487627,41,Cartagena,roannaknowles65@hotmail.com,8,1,3,5
+Sage Pickett,1249438043,82,Alto Baudó,sagepickett5976@hotmail.com,7,4,3,6
+Lunea Pacheco,1061129598,66,Aguazul,luneapacheco8083@hotmail.com,6,1,6,5
+Barbara Hyde,1422836133,14,Santa Cruz de Lorica,barbarahyde4362@yahoo.com,7,1,3,5
+Tanisha Reyes,1589753786,79,Santa Rosa de Cabal,tanishareyes@outlook.com,3,4,1,9
+Camille Mcmillan,1309200846,47,Popayán,camillemcmillan2768@gmail.com,3,7,7,3
+Nita Richardson,1751924781,30,Saravena,nitarichardson@yahoo.com,6,4,0,2
+Richard Hull,1667843640,51,Pacoa,richardhull2669@gmail.com,6,7,4,6
+Timon Sanders,1982994084,30,Chiquinquirá,timonsanders6233@hotmail.com,9,1,7,6
+Sybil Delgado,1789937245,52,Fusagasugá,sybildelgado@yahoo.com,6,10,3,5
+Jael Mathews,1340528182,18,Pereira,jaelmathews9170@outlook.com,5,4,5,5
+Ima Joyner,1236637923,50,Florencia,imajoyner@yahoo.com,4,3,1,5
+Alden Holmes,1159818083,74,Mapiripana,aldenholmes4323@yahoo.com,4,7,7,8
+Chanda Rivera,1822309461,48,Sogamoso,chandarivera@hotmail.com,3,3,5,6
+Raja Peterson,1828629040,13,Bogotá,rajapeterson@outlook.com,10,9,9,8
+Hyatt Edwards,1799142341,58,Mapiripana,hyattedwards@gmail.com,10,4,3,5
+Florence Marsh,1989897271,0,Florencia,florencemarsh6006@yahoo.com,1,10,2,9
+Harlan Mercado,1376412111,51,Corozal,harlanmercado8550@yahoo.com,5,4,5,4
+Julie Everett,1894396175,59,Calamar,julieeverett6236@gmail.com,9,5,7,7
+Cara Robles,1337514560,65,Sogamoso,cararobles@yahoo.com,10,9,3,2
+Baxter Rice,1079554617,28,Armenia,baxterrice@outlook.com,3,5,8,6
+Flavia Scott,1293250582,51,Bogotá,flaviascott@outlook.com,8,0,6,9
+Wanda Cannon,1699978563,48,Soledad,wandacannon9951@gmail.com,4,0,4,9
+Brianna Petty,1606488596,60,Popayán,briannapetty9145@hotmail.com,2,8,3,9
+Natalie Lyons,1327014565,88,Tunja,natalielyons3896@gmail.com,9,0,7,2
+September Porter,1034725612,46,Barrancabermeja,septemberporter@yahoo.com,7,4,8,4
+Joshua Flowers,1926951082,58,Facatativá,joshuaflowers@gmail.com,4,3,8,10
+Callum Griffin,1399621756,18,Montenegro,callumgriffin@gmail.com,10,8,8,7
+Madeson Perry,1138203782,27,Bogotá,madesonperry7498@hotmail.com,8,3,4,4
+Danielle Gomez,1972506391,53,Montenegro,daniellegomez@hotmail.com,9,3,6,5
+Scott Garza,1043827412,46,Puerto Carreño,scottgarza807@gmail.com,2,1,8,9
+Phelan Cannon,1150754819,85,Malambo,phelancannon@outlook.com,10,6,7,4
+Keiko Simpson,1348429036,84,Zona Bananera,keikosimpson3878@gmail.com,4,9,6,9
+Deborah Pratt,1517086028,89,Tumaco,deborahpratt@gmail.com,6,7,2,10
+Raphael Hester,1180709689,3,Manizales,raphaelhester@outlook.com,3,2,6,5
+Madison Wilkins,1249013404,29,San Juan de Pasto,madisonwilkins3909@outlook.com,9,6,9,7
+Nerea Macdonald,1753869377,71,Bucaramanga,nereamacdonald@hotmail.com,4,8,8,8
+Emerald Ryan,1708909948,69,La Plata,emeraldryan8611@gmail.com,10,4,2,2
+Cameran Rogers,1447661922,45,Mocoa,cameranrogers@outlook.com,2,8,5,5
+Farrah Peck,1669053396,4,Calarcá,farrahpeck9209@outlook.com,2,9,9,2
+Alexander Floyd,1881622681,89,Zipaquirá,alexanderfloyd1298@gmail.com,8,3,2,2
+Charlotte York,1962548731,73,Calamar,charlotteyork2541@outlook.com,9,8,8,4
+Lacy Arnold,1166001750,57,Cartagena del Chairá,lacyarnold@yahoo.com,3,4,7,3
+Mara Sweet,1019560443,7,Tumaco,marasweet@outlook.com,9,2,5,9
+Astra Chase,1486912149,59,Ciénaga,astrachase1878@outlook.com,9,7,1,2
+Courtney Jennings,1578156319,6,Ibagué,courtneyjennings@yahoo.com,2,3,9,2
+Otto Barnes,1166552420,14,Corozal,ottobarnes6374@gmail.com,7,5,9,4
+Sawyer Shelton,1418040144,14,Bogotá,sawyershelton6617@gmail.com,2,9,7,6
+Sawyer Mccarty,1665016973,38,Garzón,sawyermccarty9848@outlook.com,10,2,6,3
+Morgan Robles,1813563826,20,Aguachica,morganrobles5056@outlook.com,1,5,4,5
+Herrod Workman,1597080171,65,Santander de Quilichao,herrodworkman320@outlook.com,1,9,0,1
+Zephania Ramos,1084137087,78,Montenegro,zephaniaramos@gmail.com,9,4,6,2
+Darrel Patrick,1126328058,11,Floridablanca,darrelpatrick9478@hotmail.com,7,6,2,6
+Ima White,1811491645,72,Quimbaya,imawhite@gmail.com,9,3,4,5
+Amaya Juarez,1046920434,10,Envigado,amayajuarez6217@yahoo.com,4,8,6,3
+Kay Coleman,1908366684,43,Cúcuta,kaycoleman@yahoo.com,4,6,9,3
+Damon Henson,1879683549,67,Villa del Rosario,damonhenson1539@gmail.com,9,10,9,5
+Libby Bailey,1576302164,17,San Andrés,libbybailey6746@outlook.com,6,6,8,1
+Kevyn Mcbride,1634740505,83,Santa Cruz de Lorica,kevynmcbride@outlook.com,5,3,9,4
+Isabella Vega,1497996687,47,Rionegro,isabellavega4987@outlook.com,10,2,7,5
+Salvador Greene,1836932535,29,Acacías,salvadorgreene9965@outlook.com,9,0,2,8
+Alec Manning,1278019395,18,Fusagasugá,alecmanning8326@yahoo.com,1,9,7,6
+Felicia Gibson,1798364638,77,Sabanalarga,feliciagibson1359@outlook.com,10,4,4,0
+Cade Mendoza,1199075260,72,Ocaña,cademendoza@gmail.com,9,5,9,4
+Anthony Boyer,1568411358,80,Neiva,anthonyboyer@yahoo.com,1,9,2,2
+Deanna Perry,1233108191,10,Malambo,deannaperry@outlook.com,3,6,7,2
+Regina Everett,1873561776,30,Acacías,reginaeverett@outlook.com,8,1,8,1
+Joelle Wilcox,1198930373,84,Montelíbano,joellewilcox@outlook.com,10,5,1,1
+Allen Hodges,1091656934,6,Villa del Rosario,allenhodges@gmail.com,7,8,3,6
+Savannah Vinson,1402862626,52,Soacha,savannahvinson@gmail.com,6,0,5,6
+Alexa Fuller,1011053703,72,Mapiripana,alexafuller519@hotmail.com,3,7,7,6
+Rogan Marquez,1248993283,66,Cali,roganmarquez7368@outlook.com,4,9,6,10
+Blythe Nielsen,1820986828,65,Piedecuesta,blythenielsen1979@hotmail.com,7,0,7,8
+Amena Velasquez,1362180495,26,Montería,amenavelasquez@yahoo.com,1,8,0,4
+Medge Petty,1002659129,14,Buenaventura,medgepetty7@outlook.com,8,8,9,0
+Camilla Molina,1249175764,4,Piedecuesta,camillamolina@hotmail.com,3,5,3,8
+Bo Burnett,1588129886,90,San José del Guaviare,boburnett@hotmail.com,6,9,0,2
+Coby Lambert,1325472877,50,Montería,cobylambert@outlook.com,7,9,4,2
+Desirae Sharpe,1564626790,67,Pitalito,desiraesharpe2823@yahoo.com,7,0,7,3
+Merrill Spears,1233508091,85,Mitú,merrillspears3858@hotmail.com,4,3,8,6
+Kiona Compton,1109943924,64,San Andrés,kionacompton@outlook.com,6,8,2,8
+Quinlan Daniels,1764726058,31,Montería,quinlandaniels2320@hotmail.com,8,3,7,2
+Gay Dejesus,1918769175,40,La Plata,gaydejesus3751@yahoo.com,9,6,8,7
+Avram Gregory,1451680901,42,Leticia,avramgregory7562@gmail.com,10,10,1,2
+Eve Rosario,1962917784,42,La Tebaida,everosario@yahoo.com,6,4,0,4
+Chancellor Thomas,1333530091,75,Girardot,chancellorthomas@hotmail.com,7,1,4,6
+Reagan May,1227496978,4,Barranco Minas,reaganmay@gmail.com,3,5,1,7
+Allen Kerr,1761229812,29,Soacha,allenkerr@hotmail.com,4,6,0,9
+Ralph Cantrell,1265934182,17,Montelíbano,ralphcantrell9594@gmail.com,4,8,10,8
+Kitra Clements,1569191181,66,El Retorno,kitraclements@gmail.com,10,8,8,4
+Karyn Bender,1992300206,0,Tumaco,karynbender@gmail.com,6,4,3,7
+Jillian Cruz,1662294432,33,Medio Atrato,jilliancruz2382@hotmail.com,8,4,1,3
+Jena Dalton,1036222017,64,Riohacha,jenadalton7446@outlook.com,3,1,8,1
+Ori Haynes,1672867454,61,Palmira,orihaynes@gmail.com,5,9,10,9
+Kiona Rowe,1964177236,32,Soledad,kionarowe3500@gmail.com,1,9,7,3
+Murphy Mcmahon,1737229030,76,Pereira,murphymcmahon5200@hotmail.com,6,1,7,4
+Byron Bradford,1746286908,33,Puerto Carreño,byronbradford6811@outlook.com,6,3,4,6
+Chandler Lewis,1002963304,85,Samaniego,chandlerlewis4906@hotmail.com,9,6,1,7
+Jael David,1839765136,59,Yopal,jaeldavid@hotmail.com,1,8,1,10
+Kenneth Tate,1465244016,70,Granada,kennethtate6132@gmail.com,5,3,10,9
+Odette Cox,1789657573,49,Granada,odettecox1452@hotmail.com,0,10,5,8
+Ryder Good,1919608148,43,Puerto Carreño,rydergood@yahoo.com,5,6,7,4
+Kaye Stout,1056843739,31,Leticia,kayestout@hotmail.com,9,5,8,2
+Armando Hoover,1593711183,8,Paz de Ariporo,armandohoover@hotmail.com,7,8,6,10
+Jana Malone,1748499976,50,Santander de Quilichao,janamalone9109@hotmail.com,8,8,7,9
+Kamal Castaneda,1617211322,46,Montelíbano,kamalcastaneda4124@gmail.com,0,6,10,1
+Brock Duncan,1944165836,49,Itagüí,brockduncan9358@yahoo.com,3,3,8,10
+Tobias Callahan,1723236630,68,Corozal,tobiascallahan4368@hotmail.com,8,3,8,10
+Oren Ramirez,1470809145,29,Ibagué,orenramirez@hotmail.com,6,8,3,5
+September Carrillo,1336930703,39,Alto Baudó,septembercarrillo@hotmail.com,4,7,1,2
+Brenda Wolfe,1324878268,84,Armenia,brendawolfe5381@yahoo.com,6,4,3,0
+Dorian Hodge,1027756972,41,Granada,dorianhodge@gmail.com,7,8,10,9
+Fulton Dorsey,1940877427,61,San Juan de Girón,fultondorsey@yahoo.com,9,4,8,2
+Kimberly Barker,1455904913,61,Sogamoso,kimberlybarker508@hotmail.com,6,4,8,6
+Roary Browning,1003050483,70,Uribia,roarybrowning8334@hotmail.com,10,5,3,5
+Elaine Woodward,1336156439,56,Pereira,elainewoodward@gmail.com,4,10,1,1
+Brett Gallagher,1225084569,66,Uribia,brettgallagher6723@gmail.com,4,1,9,3
+Francis Walker,1400165541,55,Ibagué,franciswalker4869@gmail.com,1,7,4,6
+Amery Sargent,1209453679,81,Dosquebradas,amerysargent9341@gmail.com,10,4,9,7
+Jared Garrett,1788788508,52,Mitú,jaredgarrett@gmail.com,2,2,2,2
+Ainsley Harper,1633639418,83,San José del Guaviare,ainsleyharper@gmail.com,4,4,5,7
+Salvador Lowery,1484095614,14,Pitalito,salvadorlowery@gmail.com,7,3,8,2
+Palmer Velazquez,1948376901,10,Granada,palmervelazquez5236@yahoo.com,8,6,0,9
+Nola Keller,1378075421,52,Garzón,nolakeller8129@yahoo.com,1,8,1,8
+Porter Lynch,1655712779,58,Malambo,porterlynch@hotmail.com,3,7,0,9
+Robin Bradford,1059396372,1,Ibagué,robinbradford@outlook.com,6,5,5,4
+Veda Harvey,1439659528,81,San Juan de Pasto,vedaharvey1687@yahoo.com,4,8,3,1
+Yoko Leblanc,1676554553,77,Acacías,yokoleblanc1882@outlook.com,5,4,4,2
+Nevada Andrews,1967537720,84,Santa Cruz de Lorica,nevadaandrews5463@gmail.com,5,0,6,7
+Jessica Becker,1833950277,78,Medellín,jessicabecker@hotmail.com,3,8,2,9
+Wesley Townsend,1334995731,50,Maicao,wesleytownsend1151@hotmail.com,7,1,4,6
+Blaze Hampton,1326404053,34,Mocoa,blazehampton@hotmail.com,7,6,3,10
+Isabella Burnett,1202994287,44,Puerto Carreño,isabellaburnett5750@hotmail.com,0,1,8,1
+Amethyst Short,1421459161,61,Popayán,amethystshort1417@yahoo.com,3,9,9,0
+Vielka Salinas,1677772458,77,Plato,vielkasalinas5219@gmail.com,6,1,8,9
+Jelani Raymond,1285347158,79,Ibagué,jelaniraymond8033@yahoo.com,6,3,8,2
+Kennedy Brewer,1739744825,42,Aguachica,kennedybrewer3512@hotmail.com,1,7,4,2
+Lenore Jordan,1348754432,46,Garzón,lenorejordan7569@yahoo.com,3,4,9,9
+Madison Roth,1621291831,65,Bucaramanga,madisonroth@hotmail.com,5,2,1,9
+Suki Osborne,1209629889,38,Palmira,sukiosborne@outlook.com,10,9,1,9
+Mia Burnett,1453301608,18,San Andrés,miaburnett@outlook.com,2,4,3,10
+Leroy Tate,1431432112,60,Arauca,leroytate2398@gmail.com,3,6,7,2
+Fallon Harris,1909488736,30,Dosquebradas,fallonharris@gmail.com,1,7,9,6
+Oliver Carney,1737722513,50,Samaniego,olivercarney8725@yahoo.com,5,5,3,1
+Clio Woodard,1186096116,7,Sogamoso,cliowoodard@hotmail.com,5,7,7,7
+Colette Mccoy,1359647196,39,Ibagué,colettemccoy@outlook.com,10,7,2,9
+Yuli Chase,1675883108,56,Yopal,yulichase6527@gmail.com,9,7,5,7
+Ursa Moon,1693215551,30,Riosucio,ursamoon@outlook.com,1,5,1,8
+Brian Potter,1216302606,47,Miraflores,brianpotter@gmail.com,6,7,8,9
+Craig Cotton,1914082501,30,Sabanalarga,craigcotton@hotmail.com,3,2,2,0
+Flavia Garner,1629765220,40,San Andrés,flaviagarner7595@outlook.com,9,3,3,7
+Karly Higgins,1264910060,71,Barrancabermeja,karlyhiggins4355@hotmail.com,0,6,5,1
+Kim Perkins,1015539216,29,Montenegro,kimperkins4143@yahoo.com,3,5,5,7
+Graham Phillips,1786500322,7,San Andrés,grahamphillips8676@outlook.com,4,9,5,6
+Mason Sandoval,1056127172,72,Granada,masonsandoval@gmail.com,3,6,6,1
+Tanisha Herman,1313985560,33,Manizales,tanishaherman@yahoo.com,6,8,7,10
+Venus Roberts,1661758052,71,Barranquilla,venusroberts@hotmail.com,9,5,5,7
+Michael Marks,1865437145,73,Villa del Rosario,michaelmarks7332@gmail.com,5,7,0,4
+Channing Mcneil,1176200551,7,San Vicente del Caguán,channingmcneil@yahoo.com,4,10,0,2
+Madaline Sanford,1761926168,62,Sincelejo,madalinesanford@yahoo.com,3,4,1,2
+Daryl Santiago,1350217280,49,San Andrés,darylsantiago7987@hotmail.com,1,4,1,10
+Aurelia Gonzales,1478752681,79,Manizales,aureliagonzales@hotmail.com,4,6,10,7
+Farrah Hutchinson,1838891505,18,Manizales,farrahhutchinson@hotmail.com,9,2,5,8
+Olivia Juarez,1086917435,24,Bucaramanga,oliviajuarez@hotmail.com,8,2,4,3
+Kylynn Simpson,1025130884,52,Villa del Rosario,kylynnsimpson5528@hotmail.com,6,8,6,6
+Cally Spears,1753118492,13,Leticia,callyspears1912@gmail.com,8,6,5,9
+Branden Stevenson,1633249543,14,Villa del Rosario,brandenstevenson7978@yahoo.com,3,1,6,2
+Lois Downs,1683244835,21,Plato,loisdowns@outlook.com,3,5,4,3
+Todd Anthony,1275691209,68,Riosucio,toddanthony9791@yahoo.com,6,1,1,8
+Anne Garza,1878150481,66,Istmina,annegarza3310@yahoo.com,5,3,4,5
+Colby Ratliff,1941961397,83,Cumaribo,colbyratliff@gmail.com,4,0,9,4
+Reed Vinson,1614645736,73,Alto Baudó,reedvinson6964@yahoo.com,1,1,8,3
+Malcolm William,1790376701,10,La Dorada,malcolmwilliam@gmail.com,7,10,7,4
+Myles Arnold,1053253051,33,Pamplona,mylesarnold5254@hotmail.com,2,3,1,5
+Holly Herrera,1988571216,67,Medellín,hollyherrera@yahoo.com,3,7,5,4
+Kennedy Finch,1575074133,78,Popayán,kennedyfinch@hotmail.com,10,1,8,8
+Oliver Moreno,1834147066,65,Montelíbano,olivermoreno7823@outlook.com,5,5,1,4
+Cullen Blair,1157954854,84,Garzón,cullenblair@yahoo.com,2,2,4,1
+Brian Workman,1567763552,38,San Andrés,brianworkman@yahoo.com,3,4,10,1
+Quon Cantu,1542328286,78,Montería,quoncantu3304@outlook.com,1,9,7,8
+Jemima Britt,1848568759,89,Inírida,jemimabritt6343@gmail.com,5,7,8,6
+Teegan Moran,1261546518,66,Villa del Rosario,teeganmoran1120@yahoo.com,6,8,6,4
+Griffith Price,1202340104,64,Yopal,griffithprice@outlook.com,9,8,3,3
+Genevieve Valenzuela,1826265551,2,San Andrés,genevievevalenzuela125@hotmail.com,7,8,8,5
+Lunea Norton,1051486458,8,Medellín,luneanorton@hotmail.com,1,1,9,7
+Rooney Moody,1046368171,48,Barranco Minas,rooneymoody@hotmail.com,5,7,4,9
+Colleen Mathis,1041177123,12,Buenaventura,colleenmathis@gmail.com,7,9,1,4
+Alexander Kidd,1082549385,89,Acacías,alexanderkidd9183@yahoo.com,6,4,3,1
+Indira Boyle,1468554286,73,Aguazul,indiraboyle8925@gmail.com,4,6,6,8
+Hamilton Riddle,1715507741,17,Chía,hamiltonriddle@yahoo.com,9,8,6,9
+Kathleen Branch,1256902000,39,Tumaco,kathleenbranch6635@outlook.com,4,8,8,1
+Brenda Pittman,1563975387,81,Villavicencio,brendapittman4506@outlook.com,1,7,9,6
+Keely Oliver,1736192341,14,Agustín Codazzi,keelyoliver4477@gmail.com,10,7,5,9
+Cadman Skinner,1826345649,56,Cartagena,cadmanskinner@yahoo.com,5,8,4,2
+Gabriel Burton,1668074978,13,Valledupar,gabrielburton@yahoo.com,8,6,2,6
+Yvette Henson,1703557261,69,Sincelejo,yvettehenson@outlook.com,10,5,5,3
+Lunea Terrell,1900877215,31,San Marcos,luneaterrell@hotmail.com,10,3,3,3
+Ian Bullock,1317490383,27,Cali,ianbullock@hotmail.com,6,6,7,1
+Laura Owens,1440340621,50,Tunja,lauraowens@outlook.com,3,1,4,6
+Ian Wilcox,1563687006,7,Cúcuta,ianwilcox@outlook.com,9,6,4,6
+Roth Weiss,1686944411,64,Cartagena del Chairá,rothweiss@yahoo.com,5,1,1,9
+Xyla Allison,1221404885,21,Pacoa,xylaallison@hotmail.com,3,5,7,5
+Emmanuel Beard,1048414847,16,El Tambo,emmanuelbeard3994@yahoo.com,6,4,6,5
+Isaiah Sutton,1144020531,9,Barranco Minas,isaiahsutton3340@gmail.com,3,3,0,0
+Eugenia Gamble,1202776102,31,Magangué,eugeniagamble3557@gmail.com,6,3,6,1
+Zephr Douglas,1064717602,10,La Dorada,zephrdouglas5663@gmail.com,7,4,7,7
+Jelani Alexander,1256393702,10,Santa Rosa de Cabal,jelanialexander@hotmail.com,7,1,6,1
+Phelan Valentine,1912760417,10,Villavicencio,phelanvalentine6015@hotmail.com,3,5,6,6
+Isaiah Riddle,1069077622,8,Pereira,isaiahriddle5152@outlook.com,9,1,1,5
+Tobias Berger,1823791825,18,Cereté,tobiasberger@outlook.com,1,5,10,1
+Graham Diaz,1497885540,35,Corozal,grahamdiaz@outlook.com,1,7,8,5
+Allistair Crawford,1067470941,31,Santa Rosa de Cabal,allistaircrawford@gmail.com,0,2,9,9
+Lawrence Sears,1582479905,55,Calarcá,lawrencesears@yahoo.com,4,4,3,5
+Zane Kaufman,1766902937,32,Pereira,zanekaufman4375@hotmail.com,2,7,8,3
+Andrew Harris,1167316279,40,Girardot,andrewharris345@yahoo.com,6,9,8,4
+Gail Noel,1806143813,44,Manizales,gailnoel@outlook.com,1,5,5,1
+Ashton Green,1006305273,74,Bogotá,ashtongreen17@outlook.com,0,0,5,1
+Kay Watkins,1139338409,13,Sincelejo,kaywatkins2216@yahoo.com,6,8,8,7
+Maggie Baker,1014437012,68,Chiquinquirá,maggiebaker6648@hotmail.com,2,2,5,1
+Amelia Ramsey,1190492319,0,Medio Atrato,ameliaramsey2540@outlook.com,5,6,5,1
+Kennan Clements,1172257464,18,Paz de Ariporo,kennanclements9287@outlook.com,7,9,8,8
+Ishmael Wright,1263231797,49,Duitama,ishmaelwright@outlook.com,7,3,6,6
+Lance Berry,1757609103,0,Saravena,lanceberry571@hotmail.com,4,6,5,7
+Victor Oliver,1099506278,33,Carmen de Bolivar,victoroliver7127@yahoo.com,9,5,5,8
+Alfonso Le,1359921218,60,Ocaña,alfonsole4637@yahoo.com,4,2,3,6
+Rylee Park,1632708247,80,Santander de Quilichao,ryleepark1152@hotmail.com,6,9,1,5
+Galena Ortega,1973911540,70,Carmen de Bolivar,galenaortega2312@hotmail.com,0,8,6,4
+Myra Wilkerson,1576355749,50,La Plata,myrawilkerson7842@gmail.com,1,4,4,8
+Moses Heath,1431458570,38,Ibagué,mosesheath9379@gmail.com,0,8,1,2
+Ryder Hodge,1950576753,72,Fusagasugá,ryderhodge@hotmail.com,5,2,6,9
+Alfonso Campbell,1483238816,17,Uribia,alfonsocampbell5398@outlook.com,6,7,9,0
+Ralph Marshall,1387088598,56,San Andrés,ralphmarshall1881@yahoo.com,3,8,8,1
+Owen Hardy,1399875728,7,Tame,owenhardy7711@gmail.com,6,6,5,3
+Lynn Howard,1184639703,77,El Tambo,lynnhoward660@gmail.com,5,9,5,7
+Alec Coleman,1033896664,26,Mitú,aleccoleman@gmail.com,1,1,5,10
+Guy Guerrero,1072609260,88,Bogotá,guyguerrero7975@gmail.com,8,5,10,5
+Timothy Barton,1976795490,85,Armenia,timothybarton4011@outlook.com,8,1,6,6
+Ursa Phelps,1650968984,88,Mitú,ursaphelps8472@yahoo.com,6,1,1,8
+MacKensie Maldonado,1477449148,1,Garzón,mackensiemaldonado9834@gmail.com,6,5,5,8
+Evelyn Alford,1773708889,67,Agustín Codazzi,evelynalford@hotmail.com,1,9,5,6
+Hayley Chavez,1150121186,78,Alto Baudó,hayleychavez3662@yahoo.com,1,0,9,6
+Xena Quinn,1329189200,11,Mapiripana,xenaquinn@yahoo.com,0,7,9,4
+Lester Morales,1999592934,5,Pereira,lestermorales5158@hotmail.com,0,1,10,3
+Alyssa Kramer,1399732573,80,San Marcos,alyssakramer@outlook.com,6,5,10,4
+Mara Daniel,1945145892,60,La Tebaida,maradaniel8560@outlook.com,0,5,5,9
+Aaron Wallace,1743694874,84,Maicao,aaronwallace4847@yahoo.com,1,6,7,1
+Holly Sheppard,1194861722,86,Agustín Codazzi,hollysheppard8393@yahoo.com,6,6,10,0
+Knox Nunez,1367385585,46,San Andrés,knoxnunez@yahoo.com,0,3,9,1
+Kasimir Garcia,1981786853,90,Agustín Codazzi,kasimirgarcia4856@yahoo.com,2,2,5,4
+Gil Shaw,1397099555,21,Ibagué,gilshaw@yahoo.com,4,5,4,2
+Amela Cross,1802685456,80,Buenaventura,amelacross4420@yahoo.com,2,3,8,9
+Aretha West,1350138590,19,San Marcos,arethawest4371@outlook.com,5,3,5,3
+Daquan Marsh,1018047792,12,Apartadó,daquanmarsh2294@gmail.com,3,3,8,6
+Connor Wooten,1111973555,62,Tierralta,connorwooten8606@yahoo.com,8,6,3,1
+Kay Hamilton,1162896308,29,Neiva,kayhamilton9680@hotmail.com,10,7,1,8
+Jakeem Bray,1495584805,29,Cartagena,jakeembray3983@hotmail.com,1,9,9,5
+Florence Marks,1914038357,84,Puerto Asís,florencemarks@yahoo.com,7,2,5,10
+Evan Sparks,1558503147,53,Neiva,evansparks@outlook.com,5,2,10,5
+Katell Riley,1221542192,37,Manaure,katellriley3910@gmail.com,7,5,6,5
+Tate Hayes,1854004240,31,Sogamoso,tatehayes24@gmail.com,7,8,1,2
+Micah Huber,1765316703,66,Ibagué,micahhuber4563@outlook.com,4,1,8,10
+Gavin Harrison,1901230665,72,Mocoa,gavinharrison@hotmail.com,1,7,9,6
+Charles Fletcher,1064780162,38,Montería,charlesfletcher6053@hotmail.com,3,8,5,1
+Craig Parks,1243433401,79,Palmira,craigparks@gmail.com,9,9,5,4
+Quamar Crawford,1866402143,33,Palmira,quamarcrawford@hotmail.com,2,9,1,3
+Demetrius Hooper,1035351796,73,Fundación,demetriushooper1312@yahoo.com,9,3,2,6
+Odessa Nolan,1471398702,37,Puerto Nariño,odessanolan@gmail.com,0,6,7,4
+Tarik Cummings,1270493808,1,Manaure,tarikcummings@gmail.com,6,1,6,7
+Ethan Mosley,1766370646,79,Tierralta,ethanmosley@yahoo.com,3,0,2,3
+Marcia Guthrie,1235018765,30,Puerto Asís,marciaguthrie@hotmail.com,7,0,6,1
+Regina Beach,1835579312,38,Mocoa,reginabeach1050@hotmail.com,8,3,9,7
+Charde Reyes,1641091697,0,Villa del Rosario,chardereyes@hotmail.com,5,2,9,0
+Lara Sellers,1089438891,27,San Andrés,larasellers3660@outlook.com,1,1,5,3
+Samantha Joyner,1248858806,40,Riosucio,samanthajoyner764@yahoo.com,10,7,8,10
+Sebastian Morin,1507759058,86,La Dorada,sebastianmorin@hotmail.com,2,4,2,4
+Maia Roberts,1445590994,60,Florencia,maiaroberts7899@outlook.com,1,7,0,9
+Hedwig Greene,1246149167,80,Riosucio,hedwiggreene@outlook.com,1,8,2,6
+Patrick Stephenson,1554632568,27,Chiquinquirá,patrickstephenson@gmail.com,5,3,2,6
+Scarlett Peterson,1555274628,52,Uribia,scarlettpeterson@outlook.com,1,1,1,2
+Allen Albert,1426954062,72,Granada,allenalbert@outlook.com,7,9,9,1
+Frances Jacobson,1203790883,10,Calarcá,francesjacobson@yahoo.com,9,5,9,1
+Guinevere Hunt,1213472104,25,Envigado,guineverehunt@yahoo.com,0,8,4,3
+Allistair Harvey,1625051319,52,Arauca,allistairharvey@outlook.com,4,10,9,8
+Azalia Key,1774502623,21,Palmira,azaliakey4058@gmail.com,3,8,8,0
+Hoyt Crosby,1267927474,71,Piedecuesta,hoytcrosby4909@gmail.com,3,1,3,10
+Lee Talley,1994735514,12,San Marcos,leetalley3354@yahoo.com,9,2,8,4
+Briar Goff,1023598391,87,Medellín,briargoff1479@outlook.com,0,1,4,8
+Chaim Bridges,1203121607,84,Ibagué,chaimbridges@outlook.com,6,1,6,9
+James Puckett,1900868492,7,Duitama,jamespuckett@yahoo.com,2,8,2,9
+Lavinia Jones,1130981550,45,Arauca,laviniajones@yahoo.com,5,4,8,2
+Asher Mccarthy,1126526645,79,Palmira,ashermccarthy1893@yahoo.com,4,1,5,6
+Colton Sullivan,1468169978,21,Itagüí,coltonsullivan@yahoo.com,2,4,4,6
+Chase Cotton,1464037268,39,Bogotá,chasecotton@gmail.com,5,5,1,10
+Marvin Moses,1932922370,53,Aguachica,marvinmoses9368@hotmail.com,0,4,7,4
+Plato Roach,1309769213,77,Pereira,platoroach@outlook.com,4,3,1,8
+Malachi Kaufman,1236545550,60,Cartagena,malachikaufman754@yahoo.com,8,8,7,3
+Fritz Suarez,1565721681,84,Dosquebradas,fritzsuarez8080@gmail.com,9,9,9,6
+Scarlet Holman,1430291071,7,Pereira,scarletholman212@gmail.com,9,4,1,4
+Veronica Wong,1231422956,75,Arauca,veronicawong2936@yahoo.com,5,1,2,6
+Colt Yang,1861815484,38,Medio Atrato,coltyang@outlook.com,10,5,2,5
+Christian Craft,1754819576,31,Manaure,christiancraft1049@yahoo.com,8,3,7,6
+Ann Moore,1847580311,31,Barranco Minas,annmoore4029@outlook.com,9,9,10,5
+Wesley Roy,1176045616,0,San Andrés,wesleyroy876@yahoo.com,8,8,1,2
+Yen Gonzales,1540249434,26,Ipiales,yengonzales7238@hotmail.com,5,8,7,2
+Irma Holt,1539309147,61,Carmen de Bolivar,irmaholt@gmail.com,5,1,5,4
+Astra Frank,1362060749,49,Pitalito,astrafrank@gmail.com,3,7,4,7
+Emily Mcdaniel,1379944043,80,Girardot,emilymcdaniel@gmail.com,5,9,3,3
+Quinlan Dennis,1820028285,65,Yopal,quinlandennis@hotmail.com,8,1,2,8
+Tanisha Bird,1049292789,3,Turbo,tanishabird@gmail.com,2,6,2,8
+Aristotle Frye,1053450935,44,Armenia,aristotlefrye@yahoo.com,5,5,3,2
+Kamal Mendez,1793446857,27,Ibagué,kamalmendez2866@yahoo.com,1,10,0,5
+Dustin Clay,1356863400,8,Quibdó,dustinclay3790@outlook.com,8,10,6,5
+Cheyenne Gallagher,1905755516,66,Palmira,cheyennegallagher@gmail.com,8,7,7,6
+Lani Pickett,1784442888,47,Santa Rosa de Cabal,lanipickett@hotmail.com,2,7,5,3
+Miranda Mckenzie,1634406517,54,Rionegro,mirandamckenzie1802@hotmail.com,1,4,9,3
+Isaiah Odom,1163544143,75,Carmen de Bolivar,isaiahodom@gmail.com,8,8,5,3
+Illana Sheppard,1305567920,56,Puerto Carreño,illanasheppard@gmail.com,7,5,4,4
+Ray Potter,1684800825,43,Aguazul,raypotter@hotmail.com,0,4,6,4
+Darius Fuller,1675246984,10,Puerto Guzmán,dariusfuller5983@hotmail.com,4,5,5,0
+Kibo Lucas,1827635926,14,Manizales,kibolucas5236@gmail.com,4,5,4,8
+Stacey Gill,1661565547,69,Puerto Carreño,staceygill@gmail.com,3,6,3,5
+Jaquelyn Nieves,1112249001,84,Santa Rosa de Cabal,jaquelynnieves4053@gmail.com,7,6,7,0
+Carlos Dunlap,1433430180,54,Ibagué,carlosdunlap1672@outlook.com,9,8,9,7
+Benjamin Mckay,1856390182,32,Bogotá,benjaminmckay@hotmail.com,5,4,1,6
+Cora Richmond,1725993395,18,Pacoa,corarichmond5848@outlook.com,9,10,2,7
+Colleen Holder,1203836763,56,Pacoa,colleenholder@yahoo.com,9,2,5,1
+Austin Reese,1671498390,45,Barranquilla,austinreese4315@yahoo.com,2,4,6,7
+Hadassah Smith,1962302915,64,Quimbaya,hadassahsmith@hotmail.com,4,3,10,0
+Dennis Brewer,1439638322,52,La Plata,dennisbrewer1071@yahoo.com,0,8,8,4
+Jescie Horn,1569695234,29,Puerto López,jesciehorn3241@hotmail.com,8,5,6,4
+Serina Snow,1384260844,14,Valle del Guamuez,serinasnow@hotmail.com,3,9,3,0
+Bruce Welch,1111599369,60,Santa Rosa de Cabal,brucewelch@gmail.com,10,1,4,3
+Hiram Sparks,1213062406,24,La Tebaida,hiramsparks82@hotmail.com,2,4,8,5
+Adria Sanford,1229406283,65,Cartagena del Chairá,adriasanford@gmail.com,8,2,7,3
+Uriel Rush,1986780294,64,Barrancabermeja,urielrush@outlook.com,8,7,0,6
+Isabelle Daniel,1967527673,69,Cumaribo,isabelledaniel8845@yahoo.com,3,3,7,4
+Rafael Clay,1132475591,63,Tunja,rafaelclay@outlook.com,4,7,8,3
+Serena Riggs,1669282106,67,Saravena,serenariggs4289@yahoo.com,6,1,3,5
+Candice Wallace,1580483585,20,Turbo,candicewallace6225@yahoo.com,3,9,3,4
+Cody Lowe,1363926469,59,San Andrés,codylowe@yahoo.com,7,1,4,6
+Portia Goodman,1674513748,87,Quimbaya,portiagoodman7867@yahoo.com,5,8,1,8
+Octavius Fuller,1332145171,38,Aguachica,octaviusfuller4981@hotmail.com,6,8,4,8
